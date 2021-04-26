@@ -13,7 +13,7 @@ function NavigationBar (){
 			<Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <div className="menus">
-            <Nav.Link className="menu"  href="#link">Show Book</Nav.Link>
+            <Nav.Link className="menu"  href="#home">Show Book</Nav.Link>
           </div>
           <div className="menus">
             <Nav.Link className="menu"  href="#link">Borrow</Nav.Link>
