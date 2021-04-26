@@ -39,19 +39,19 @@ function Booklists(props) {
           <div>
             <label>
               <h4>ISBN:</h4>
-            </label>{" "}
+            </label>{" "} 119134203294
             {}
           </div>
           <div>
             <label>
               <h4>Writer:</h4>
-            </label>{" "}
+            </label>{" "} Eliza Maharani Sutowo
             {}
           </div>
           <div>
             <label>
               <h4>Publisher:</h4>
-            </label>{" "}
+            </label>{" "} ITERA Gemilang
             {}
           </div>
           <div>

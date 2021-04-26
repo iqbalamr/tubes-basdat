@@ -1,5 +1,5 @@
 import React from 'react';
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/aux';
 import './Layout.css'
 // import Header from '../Pageheader/Header';
 import NavigationBar from '../Navbar/Navbar';
