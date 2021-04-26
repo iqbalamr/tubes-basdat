@@ -1,0 +1,30 @@
+.Content {
+    padding: 0;    
+    align-items: center;
+}
+.body {  
+    margin: auto;
+    max-width: 90%;
+    padding-top: 10px;
+}
+.navbar {
+    width: 100% ;
+    max-width: 100% ;
+    min-height: 80px;
+    max-height: 100%;
+    background:none repeat scroll 0 0 #0E0D27;  
+}
+
+	
+@media (min-width: 1200px){
+
+    .row-fluid:before, .row-fluid:after {
+        display: table;
+        content: "";
+        line-height: 0;
+	}
+	.row-fluid:after{
+		clear: both;
+	}
+
+  }

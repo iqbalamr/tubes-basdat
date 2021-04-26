@@ -1,0 +1,60 @@
+.navbar-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+}
+.navbar-container .navbar-a {
+  margin: 0 auto !important;
+  padding: 10px 10px 10px 40px !important;
+  height: 100% !important;
+}
+.navbar-container .navbar-a .home {
+  color: #FFFFFF !important;
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+}
+.navbar-container .menus {
+  background: transparent;
+  border: 1px transparent solid !important;
+  margin: 0px 10px 0px 10px !important;
+  height: 50px;
+  width: 180px;
+}
+.navbar-container .menus a {
+  text-decoration: none !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  padding-top: 11px;
+}
+.navbar-container .menus .menu-1:hover {
+  border: 5px #2063F2 solid !important;
+  border-radius: 50px !important;
+  text-align: center !important;
+  padding: 6px 0px 6px 0px !important;
+}
+.navbar-container .menus .menu-2:hover {
+  border: 5px #613EB0 solid !important;
+  border-radius: 50px !important;
+  text-align: center !important;
+  padding: 6px 0px 6px 0px !important;
+}
+.navbar-container .menus .menu-3:hover {
+  border: 5px #ACC9FE solid !important;
+  border-radius: 50px !important;
+  text-align: center !important;
+  padding: 6px 0px 6px 0px !important;
+}
+.navbar-container .menus .menu-4:hover {
+  border: 5px #134E84 solid !important;
+  border-radius: 50px !important;
+  text-align: center !important;
+  padding: 6px 0px 6px 0px !important;
+}
+@media (max-width: 980px) {
+  .ml-auto {
+    float: none !important;
+    align-items: center !important;
+  }
+}
