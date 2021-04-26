@@ -2,13 +2,11 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 0 auto;
-
+  height: 80px!important;
   .navbar-a
   {
     margin : 0 auto !important;
     padding : 10px 10px 10px 40px !important;
-    height: 100% !important;
     .home {
       color: #FFFFFF !important;
       font-size: 3rem !important;
@@ -28,36 +26,33 @@
       font-weight: 700 !important;
       padding-top: 11px;
     }
-    .menu-1:hover {
-      border: 5px #2063F2 solid !important;
-      border-radius: 50px !important;
-      text-align: center !important;   
-      padding: 6px 0px 6px 0px !important;
-    }
-    .menu-2:hover {
+    .menu:hover {
       border: 5px #613EB0 solid !important;
-      border-radius: 50px !important;
-      text-align: center !important;   
-      padding: 6px 0px 6px 0px !important;
-    }
-    .menu-3:hover {
-      border: 5px #ACC9FE solid !important;
-      border-radius: 50px !important;
-      text-align: center !important;   
-      padding: 6px 0px 6px 0px !important;
-    }
-    .menu-4:hover {
-      border: 5px #134E84 solid !important;
       border-radius: 50px !important;
       text-align: center !important;   
       padding: 6px 0px 6px 0px !important;
     }
   } 
 }
+.navbar-light .navbar-toggler-icon {
+  background-color: #ffff;
+  background-image: none !important;
+  -webkit-mask-image: url(/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/sliders-h-solid.svg) !important;
+  mask-image: url(/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/sliders-h-solid.svg);
+}
+.navbar-collapse{
+  max-height: 340px;
+  background-color: #0E0D27;
+  overflow-x: visible;
+  align-items: center;
+  padding: 0 30px 0 0 !important;
+  margin-top: 10px !important;
+}
 @media (max-width: 980px) {
   .ml-auto{
     float: none !important;
     align-items: center !important;
+    max-width: 100% !important;
   }
 }
 

@@ -9,9 +9,7 @@ import NavigationBar from '../Navbar/Navbar';
 function Layout(){
 return (
 	<Aux>
-			<div className = "navbar">
-					<NavigationBar/>
-			</div>
+			<NavigationBar/>
 			<div className = "body">
 					Body    
 			</div>    
