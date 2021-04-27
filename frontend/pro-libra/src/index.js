@@ -7,8 +7,7 @@ import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ShowBook from './components/pages/ShowBook/ShowBook';
 import reportWebVitals from './reportWebVitals';
-import './components/Bookcard/Bookcard.css';
-import './components/Navbar/Navbar.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
