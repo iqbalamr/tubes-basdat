@@ -3,7 +3,7 @@
   border-radius: 15px;
   margin: 0 auto!important;
   padding: 20px 20px 20px 20px;
-  width: 600px;
+  width: 600px !important;
 }
 .cards .book-picture {
   width: 137px;
@@ -12,22 +12,22 @@
   float: left;
 }
 .cards .book-detail {
-  float: left;
+  display: inline-block;
   padding: 0px 0px 0px 20px !important;
   width: 75% !important;
 }
 .cards h2 {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 .cards h4 {
-  font-weight: 700;
-  font-size: 1.3rem;
-  line-height: 0rem;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  line-height: 0rem !important;
 }
-.cards p {
-  font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 2rem;
+.cards .paragraph {
+  font-weight: 400 !important;
+  font-size: 1.3rem !important;
+  line-height: 2.3rem !important;
 }
 .cards .more-button {
   margin-top: 20px;
@@ -46,11 +46,11 @@
   outline: none !important;
 }
 .row {
-  display: flex;
+  display: flex !important;
 }
 @media (max-width: 980px) {
   .cards {
-    width: 400px;
+    width: 400px !important ;
     height: 300px !important;
     margin-left: 25px !important;
   }
