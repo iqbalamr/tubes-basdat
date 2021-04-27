@@ -1,5 +1,5 @@
 import React from 'react';
-//import Aux from '../../hoc/aux';
+import Aux from '../../hoc/ReactAux';
 import './Layout.css'
 // import Header from '../Pageheader/Header';
 import NavigationBar from '../Navbar/Navbar';
@@ -23,7 +23,7 @@ return (
 			</div>
 			  
 			<div className = "footer"> Footer</div>
-	</Aux>
+	<Aux/>
 	);
 }
 
