@@ -3,7 +3,7 @@
   border-radius: 15px;
   margin:0 auto!important;
   padding: 20px 20px 20px 20px;
-  width: 600px;
+  width: 600px !important;
   .book-picture{
     width: 137px;
     height: 200px;
@@ -11,22 +11,22 @@
     float: left;
   }
   .book-detail{
-    float: left;
+    display: inline-block;
     padding: 0px 0px 0px 20px !important;
     width: 75% !important;
   }
   h2{
-    font-weight: 700;
+    font-weight: 700 !important;
   }
   h4{
-    font-weight:700;
-    font-size: 1.3rem;
-    line-height: 0rem;
+    font-weight:700 !important;
+    font-size: 1.3rem !important;
+    line-height: 0rem !important;
   }
-  p{
-    font-weight:400;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+  .paragraph {
+    font-weight:400 !important;
+    font-size: 1.3rem !important;
+    line-height: 2.3rem !important;
   }
   .more-button{
     margin-top: 20px;
@@ -46,15 +46,27 @@
   }
 }
 .row {
-  display: flex;
+  display: flex !important;
   }
 @media(max-width:980px){
   .cards{
-    width: 400px;
-    height: 300px !important;
-    margin-left: 25px !important;
+    width: 300px !important ;
+    min-height: 300px !important;
+    margin: 0px auto !important;
+    align-items: center !important;
+    .book-detail{
+      width: 100% !important;
+      padding: 0px 10px 0px 10px !important;
+    }
     .more-button{
       float: right;
+    }
+    .book-picture{
+      width: 200px;
+      height: 300px;
+      float: none;
+      margin: 20px 30px 10px 30px;
+      align-items: center;
     }
   }
 }
