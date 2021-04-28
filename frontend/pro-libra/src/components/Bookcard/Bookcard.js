@@ -12,7 +12,9 @@ function Booklists(props) {
   
   return(
     <Card className="cards">
-      <Card.Img className="book-picture" src={Pictures}/>
+      <div className="book-img">
+        <Card.Img className="book-picture" src={Pictures}/>
+      </div>
       <Card.Body className="book-detail">
         <Card.Title>
           <h2>Book Title</h2>

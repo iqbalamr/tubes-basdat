@@ -6,16 +6,21 @@ import App from './App';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import ShowBook from './components/pages/ShowBook/ShowBook';
+import Borrow from './components/pages/Borrow/Borrow';
 import reportWebVitals from './reportWebVitals';
-
+import OurTeam from './components/pages/OurTeam/OurTeam';
+import ManageBook from './components/pages/ManageBook/ManageBook';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/">
       <Navbar/>
-      <Switch>
+      <Switch >
         <Route exact path="/" component={App}/>
-        <Route path="/showbook" component={ShowBook}/>
+        <Route path="/showbook" component={ShowBook} />
+        <Route path="/borrow" component={Borrow}/>
+        <Route path="/manage-book" component={ManageBook}/>
+        <Route path="/our-team" component={OurTeam}/>
       </Switch>
     </Router>
   </React.StrictMode>,
