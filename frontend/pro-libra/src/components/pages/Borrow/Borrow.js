@@ -15,7 +15,7 @@ const Borrow = ({routes})=> {
 
     <Container>
     <Row className="borrow-body"> 
-    <Col md={3} xs={12} className="leftbar-menu" >
+    <Col md={3} xs={12} className="leftbar-column" >
       <div className="left-bar-menus">
           <ul>
             <div className="left-bar-menu">

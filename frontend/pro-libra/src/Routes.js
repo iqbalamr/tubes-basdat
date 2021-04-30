@@ -34,7 +34,7 @@ const routes = [
     component: ManageBook,
   },
   {
-    path: '/ourteam',
+    path: '/our-team',
     component: OurTeam,
   },
 ];

@@ -24,6 +24,7 @@
 .page-showbook .container .title-page h1 {
   font-weight: 800 !important;
   color: #FFFFFF;
+  text-align: left!important;
 }
 .page-showbook .container .search-bar {
   width: 320;

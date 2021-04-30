@@ -1,0 +1,52 @@
+[
+  { 
+    "id"        : "ketua",
+    "Nama" 			: "Dhifaf Athiyah Zhabiyan",
+    "NIM" 			: "119140047",
+    "Nomor" 		: "081995506809",
+    "Email" 		: "dhifaf.119140047@student.itera.ac.id",
+    "LingkupKerja" 	: "banyaklah pokoknya",
+    "src" : "/img/dhifaf.png"
+  },
+  {
+    "id"  : "anggota-1",
+    "Nama"			: "Eliza Maharani Sutowo",
+    "NIM"			: "119140002",
+    "Nomor"			: "0857788932153",
+    "Email"			: "eliza.119140002@student.itera.ac.id",
+    "LingkupKerja"		: "cuman haha hihi :) mantap bund",
+    "src" : "/img/eliza.png"
+  },
+  { 
+    "id" : "anggota-2",
+    "Nama" 			: "Della Salsabila",
+    "NIM" 			: "119140071",
+    "Nomor" 		: "081377959320",
+    "Email" 			: "della.119140071@student.itera.ac.id",
+    "LingkupKerja" 	: "tim hore",
+    "src" : "/img/farras.png"
+  },
+  {
+    "id"  : "anggota-3",
+    "Nama"			: "Abdurrachman Farras",
+    "NIM"			: "119140052",
+    "Nomor" 		: "08",
+    "Email" 			: "abdurrachman.119140052@student.itera.ac.id",
+    "LingkupKerja"		: "sibuk pokoknya mah",
+    "src" : "/img/farras.png"
+  },
+  {
+    "id"  : "anggota-4",
+    "Nama" 			: "Iqbal Amruloh",
+    "NIM"			: "119140161",
+    "Nomor"			: "082213457070",
+    "Email"			: "iqbal.119140161@student.itera.ac.id",
+    "LingkupKerja"		: "timses",
+    "src" : "/img/farras.png"
+  }
+]
+
+
+
+
+

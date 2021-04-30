@@ -4,15 +4,16 @@ import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import routes from './Routes';
 import RouteWithSubRoutes from './utils/RouteWithSubRoutes';
-
+import Home from './components/pages/Home/Home';
 function App() {
   return (
-    <Router basename="/home">
+    <Router >
       <Navbar/>
       <Switch >
         {routes.map((route, i) => (
           <RouteWithSubRoutes key={i} {...route}/>
         ))}
+        <Home/>
       </Switch>
     </Router>  
   );

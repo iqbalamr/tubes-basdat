@@ -11,7 +11,7 @@ function NavigationBar (){
 	<header className="navbar-container">
 		<Navbar className="navbar-a" expand="lg" fixed="top" >
 			<Navbar.Brand >
-        <Link className="home" exact to='/'>
+        <Link className="home" exact to='/home'>
           PRO Libra
         </Link>
       </Navbar.Brand>
