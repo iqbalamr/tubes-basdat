@@ -8,9 +8,17 @@ import {
   Col
 } from 'react-bootstrap';
 import './ManageBook.css';
-const LoginForm = () => {
+import {Link, Route, Switch} from 'react-router-dom';
+import AddBook from '../AddBook/AddBook';
+
+function LoginForm (){
   return(
-    <Card className="form-login-card">
+    <div className="login-col">
+   <div>
+    <h1>Oopps you are not an admin, please login!</h1>
+   </div>
+   <div className="login-card">
+   <Card className="form-login-card">
     <Card.Body>
     <Card.Title >
       <h2>Admin Login</h2>
@@ -28,22 +36,26 @@ const LoginForm = () => {
         <Button 
           className="login-button" 
           variant="primary">
-            Login
+            <Link className="login-link" to="/manage-book/add-book" >Login</Link>
         </Button>
       </Card.Body>
       </Card>
-     
+   </div>
+     </div>
   );
 };
 function ManageBook() {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col md="auto" className="login-col">
-        <h1>Oopps you are not an admin, please login!</h1>
-        <div className="login-page">
-          <LoginForm/>    
-        </div>
+        <Col md="auto" className="manage-page">
+        <Switch>
+
+        </Switch>
+        <Route path="/manage-book/add-book" component={AddBook}/>
+          <div className="login-page">
+            <LoginForm/>    
+          </div>
         </Col>
       </Row>
     </Container>
