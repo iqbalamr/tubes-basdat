@@ -5,6 +5,10 @@ import BorrowForm from './components/pages/BorrowCard/BorrowForm';
 import ReturnForm from './components/pages/ReturnCard/ReturnForm';
 import ManageBook from './components/pages/ManageBook/ManageBook';
 import OurTeam from './components/pages/OurTeam/OurTeam';
+// import BorrowerList from './components/pages/BorrowerList/BorrowerList';
+// import LibraryFines from './components/pages/LibraryFines/LibraryFines';
+// import RemoveBook from './components/pages/RemoveBook/RemoveBook';
+// import AddBook from './components/pages/AddBook/AddBook';
 
 const routes = [
   {
@@ -32,6 +36,7 @@ const routes = [
   {
     path: '/manage-book',
     component: ManageBook,
+    
   },
   {
     path: '/our-team',

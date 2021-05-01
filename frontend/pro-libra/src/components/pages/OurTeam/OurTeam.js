@@ -26,31 +26,31 @@ function OurTeam() {
             <div className="desc-member">
               <div >
                 <label>
-                  <h4>Name :</h4>
+                  <h4>Name    :</h4>
                 </label>{" "}
                 {member.Nama}
               </div>
               <div>
             <label>
-              <h4>NIM:</h4>
+              <h4>NIM   :</h4>
             </label>{" "} 
             {member.NIM}
           </div>
           <div>
             <label>
-              <h4>Email:</h4>
+              <h4>Email   :</h4>
             </label>{" "} 
             {member.Email}
           </div>
           <div>
             <label>
-              <h4>As :</h4>
+              <h4>As    :</h4>
             </label>{" "}
             {member.id}
           </div>
           <div>
             <label>
-              <h4>Job :</h4>
+              <h4>Job   :</h4>
             </label>{" "}
               {member.LingkupKerja}
           </div>

@@ -3,6 +3,56 @@
   padding: 0px !important;
   align-items: center !important;
   background-color: #0E0D27;
+  min-height: 1920px;
+}
+.container .leftbar-add-column {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 10px;
+  height: 100%;
+}
+.container .leftbar-add-column .leftbar-add-menus {
+  background-color: #0E0D27;
+  height: 100% !important;
+  padding: 15px 0px 0px 0px !important;
+  border-right: 5px solid #613EB0;
+}
+.container .leftbar-add-column .leftbar-add-menus ul {
+  padding: 0;
+  margin: 0;
+}
+.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu {
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  border-bottom: 5px solid #613EB0;
+}
+.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu {
+  text-decoration: none !important;
+}
+.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu h2 {
+  color: #FFFFFF;
+  font-weight: 700;
+  padding-left: 40px;
+}
+.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu:hover {
+  background-color: #613EB0;
+  text-decoration: none !important;
+}
+.container .temporary-display {
+  display: block !important;
+  margin: 0  auto !important;
+  align-items: center !important;
+}
+.container .main-body {
+  width: 100%;
+  height: 100%;
+}
+.container .right-column {
+  padding: 60px 60px 0px 60px;
 }
 .container h1 {
   font-size: 3rem;
@@ -13,6 +63,11 @@
 .container .login-col {
   padding-top: 60px;
   align-items: center !important;
+}
+.container .login-col .login-card {
+  display: flex;
+  margin: 0 auto !important;
+  padding-top: 60px;
 }
 .container .login-col h2 {
   text-align: center !important;
@@ -55,4 +110,8 @@
   font-size: 1.5rem;
   background-color: #613EB0;
   border: none;
+}
+.container .login-col .form-login-card .login-button .login-link {
+  text-decoration: none !important;
+  color: #FFFFFF !important;
 }

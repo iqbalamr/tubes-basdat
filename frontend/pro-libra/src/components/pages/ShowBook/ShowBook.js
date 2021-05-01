@@ -11,7 +11,7 @@ function ShowBook() {
   return (
     <div className = "page-showbook">
 				<Container className="container">
-					<Row className="justify-content-md-center showbook-row">
+					<Row className="justify-content-md-center ">
 						<Col className="title-page"  md={8}>
 							<h1>List of Book In Our Library</h1>
 						</Col>
