@@ -45,7 +45,7 @@ const Borrow = ({routes})=> {
     ))}
     <div className="main-display">
       <h1>Welcome use this page to borrow or return your book</h1>
-        <img className="borrow-img"src={BorrowImage} alt="img"/>
+        <img className="borrow-img" src={BorrowImage} alt="img"/>
       </div>
     </Switch>  
       </Col>

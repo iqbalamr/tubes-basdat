@@ -1,40 +1,52 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
+import {
+  Table,
+  Col
+} from 'react-bootstrap';
+import './TableList.css';
 
 const BorrowerList = () => {
   return (
-    <>
-      <h1>Welcome use this page to borrow or return your book</h1>
+    <Col className="borrower-column" >
+      <h1 className="borrower-title">Here are the list of borrower </h1>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>No</th>
+                <th>Name</th>
+                <th>ISBN of The Book</th>
+                <th>Date of Borrow</th>
+                <th>Date of Return</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
                 <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>1291013121368</td>
+                <td>2021-05-19</td>
+                <td>2021-05-22</td>
+                <td>Belum dikembalikan</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td colSpan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>1</td>
+                <td>Manuel</td>
+                <td>1291013121368</td>
+                <td>2021-05-19</td>
+                <td>2021-05-22</td>
+                <td>Belum dikembalikan</td>
+              </tr><tr>
+                <td>1</td>
+                <td>Dhifaf</td>
+                <td>1291013121368</td>
+                <td>2021-05-19</td>
+                <td>2021-05-22</td>
+                <td>Belum dikembalikan</td>
               </tr>
             </tbody>
           </Table>
-    </>        
+    </Col>        
   )
 }
 

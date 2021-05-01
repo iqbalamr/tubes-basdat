@@ -1,7 +1,10 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {
+  Row,
+  Col,
+  Button
+} from 'react-bootstrap';
 import './RemoveBook.css';
 import Pictures from '../../../assets/Images/test.jpg';
 import Card from 'react-bootstrap/Card';
@@ -10,11 +13,17 @@ function ShowBook() {
 	// const [search,setSearch] = useState("");
   return (
     <>
-    <Row>
-      <Col>
-      <h1>RemoveBook</h1>
+    <Row className="justify-content-md-center remove-book-row">
+      <Col className="title-page"  md={8} >
+        <h1>RemoveBook</h1>
       </Col>
-      <Col>
+      <Col  md={4} >
+        <div class="search-bar">
+          <div class="form-group">
+            <span class="fa fa-search form-control-icon"></span>
+            <input type="text" class="form-control" placeholder="Search book..."/>
+          </div>  
+        </div>
       </Col>
     </Row>
     <Row>
@@ -59,6 +68,11 @@ function ShowBook() {
           </div>
         </div>
       </Card.Body>
+      <Button 
+          className="remove-button" 
+          variant="primary">
+            Remove
+          </Button>
     </Card>
     </Row>
   </>
