@@ -52,7 +52,7 @@
   height: 100%;
 }
 .container .right-column {
-  padding: 60px 60px 0px 60px;
+  padding: 0px;
 }
 .container h1 {
   font-size: 3rem;
@@ -61,7 +61,7 @@
   text-align: center !important;
 }
 .container .login-col {
-  padding-top: 60px;
+  padding: 60px;
   align-items: center !important;
 }
 .container .login-col .login-card {

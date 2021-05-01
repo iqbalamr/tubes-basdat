@@ -66,7 +66,7 @@ const routes = [
       component: BorrowerList,
     },
     {
-      path: '/library-fines',
+      path: '/manage-book/library-fines',
       component: LibraryFines,
     }
   
