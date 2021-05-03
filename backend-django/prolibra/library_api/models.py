@@ -21,13 +21,13 @@ class Buku(models.Model):
     kategori = models.CharField(max_length=10)
     no_lokasi = models.ForeignKey(Lokasi, on_delete=models.CASCADE)
     sinopsis = models.TextField(max_length=1000)
-    gambar = models.ImageField(upload_to='book_images/')
+    gambar = models.ImageField(upload_to='book_images/', default=None)
 
     class Meta:
         ordering = ('-judul_buku',)
 
     def __str__(self):
-        return self.judul_buku
+        return self.judul_buku+ " " + self.isbn
 
 
 # class Mengembalikan(models.Model):
