@@ -14,10 +14,10 @@ class Lokasi(models.Model):
 
 class Buku(models.Model):
     isbn = models.CharField(max_length=13, primary_key=True)
-    judul_buku = models.CharField(max_length=100)
+    judul_buku = models.CharField(max_length=100, unique=True)
     penulis = models.CharField(max_length=100)
     penerbit = models.CharField(max_length=100)
-    jumlah_buku = models.IntegerField(max_length=3)
+    jumlah_buku = models.IntegerField()
     kategori = models.CharField(max_length=10)
     no_lokasi = models.ForeignKey(Lokasi, on_delete=models.CASCADE)
     sinopsis = models.TextField(max_length=1000)
@@ -27,7 +27,10 @@ class Buku(models.Model):
         ordering = ('-judul_buku',)
 
     def __str__(self):
-        return self.judul_buku+ " " + self.isbn
+        return f'{self.judul_buku} {self.isbn}'
+
+    def get_absolute_url(self):
+        return f'/{self.judul_buku.replace(" ","-")}'
 
 
 # class Mengembalikan(models.Model):
@@ -37,48 +40,51 @@ class Buku(models.Model):
 class Peminjam(models.Model):
     id_peminjam = models.CharField(max_length=11, primary_key=True)
     first_name = models.CharField(max_length=10)
-    last_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30, null=True)
     dept_name = models.CharField(max_length=30)
     alamat = models.CharField(max_length=100)
     no_telepon = models.CharField(max_length=13)
+    nim = models.CharField(max_length=9, null=True)
+    nip = models.CharField(max_length=18, null=True)
+    tipe = models.CharField(max_length=10, null=True)
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
+        return f'{self.first_name} {self.last_name}'
 
 
 class Meminjam(models.Model):
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
     isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
-    tanggal_peminjaman = models.DateField(auto_now_add=True)
-    tanggal_pengembalian = models.DateField()
+    tanggal_peminjaman = models.DateTimeField(auto_now_add=True)
+    tanggal_pengembalian = models.DateTimeField(auto_now=True,null=True)
     status_peminjaman = models.CharField(max_length=10, null=True)
 
 
-class Mahasiswa(models.Model):
-    id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=10)
-    last_name = models.CharField(max_length=30)
-    dept_name = models.CharField(max_length=30)
-    alamat = models.CharField(max_length=100)
-    no_telepon = models.CharField(max_length=13)
-    nim = models.CharField(max_length=9)
+# class Mahasiswa(models.Model):
+#     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
+#     first_name = models.CharField(max_length=10)
+#     last_name = models.CharField(max_length=30, null=True)
+#     dept_name = models.CharField(max_length=30)
+#     alamat = models.CharField(max_length=100)
+#     no_telepon = models.CharField(max_length=13)
+#     nim = models.CharField(max_length=9)
+#
+#     def __str__(self):
+#         return f'{self.first_name} {self.last_name}'
 
-    def __str__(self):
-        return self.first_name + ' ' + self.last_name
 
-
-class Dosen(models.Model):
-    id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=10)
-    last_name = models.CharField(max_length=30)
-    dept_name = models.CharField(max_length=30)
-    alamat = models.CharField(max_length=100)
-    no_telepon = models.CharField(max_length=13)
-    nip = models.CharField(max_length=18)
-
-    def __str__(self):
-        return self.first_name + ' ' + self.last_name
-
+# class Dosen(models.Model):
+#     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
+#     first_name = models.CharField(max_length=10)
+#     last_name = models.CharField(max_length=30, null=True)
+#     dept_name = models.CharField(max_length=30)
+#     alamat = models.CharField(max_length=100)
+#     no_telepon = models.CharField(max_length=13)
+#     nip = models.CharField(max_length=18)
+#
+#     def __str__(self):
+#         return f'{self.first_name} {self.last_name}'
+#
 
 class Denda(models.Model):
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)

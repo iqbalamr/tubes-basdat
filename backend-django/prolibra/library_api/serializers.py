@@ -4,13 +4,12 @@ from .models import (
     Lokasi,
     Peminjam,
     Meminjam,
-    Mahasiswa,
-    Dosen,
     Denda,
     Petugas,
     Pendataan,
     Mengurusi
 )
+
 
 class LokasiSerializer(serializers.ModelSerializer):
 
@@ -18,11 +17,14 @@ class LokasiSerializer(serializers.ModelSerializer):
         model = Lokasi
         fields = ['no_lokasi','nama_seksi']
 
+
 class BukuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Buku
         fields = '__all__'
+        lookup_field= 'judul_buku'
+
 
 class PeminjamSerializer(serializers.ModelSerializer):
 
@@ -30,23 +32,13 @@ class PeminjamSerializer(serializers.ModelSerializer):
         model = Peminjam
         fields = '__all__'
 
+
 class MeminjamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Meminjam
         fields = '__all__'
 
-class MahasiswaSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Mahasiswa
-        fields = '__all__'
-
-class DosenSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Dosen
-        fields = '__all__'
 
 class DendaSerializer(serializers.ModelSerializer):
 
@@ -61,11 +53,13 @@ class PetugasSerializer(serializers.ModelSerializer):
         model = Petugas
         fields = '__all__'
 
+
 class PendataanSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pendataan
         fields = '__all__'
+
 
 class MengurusiSerializer(serializers.ModelSerializer):
 
