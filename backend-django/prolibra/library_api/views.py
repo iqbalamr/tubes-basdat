@@ -4,8 +4,6 @@ from .models import (
     Peminjam,
     Meminjam,
     Denda,
-    Petugas,
-    Pendataan,
     Mengurusi
 )
 from .serializers import (
@@ -13,8 +11,6 @@ from .serializers import (
     MeminjamSerializer,
     PeminjamSerializer,
     DendaSerializer,
-    PetugasSerializer,
-    PendataanSerializer,
     MengurusiSerializer
 )
 # from django.http import JsonResponse
@@ -135,57 +131,16 @@ class FinesList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class Admin(APIView):
+class ServicesList(APIView):
 
     def get(self, request):
-        admin = Petugas.objects.all()
-        serializer = PetugasSerializer(admin, many=True)
+        services = Mengurusi.objects.all()
+        serializer = MengurusiSerializer(services, many=True)
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = PetugasSerializer(data=request.data)
+        serializer = MengurusiSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# def Index(request):
-#     return HttpResponse("It's work sir")
-
-# def book_list(request):
-#
-#     #get all books info
-#     if request.method == 'GET':
-#         books = Buku.objects.all()
-#         serializer = BukuSerializer(books, many=True)
-#         return JsonResponse(serializer.data, safe=False)
-#
-#     elif request.method == 'POST':
-#         data = JSONParser().parse(request)
-#         serializer = BukuSerializer(data = data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return JsonResponse(serializer.data, status = 201)
-#         return JsonResponse(serializer.errors, status = 400)
-#
-# # @csrf_exempt
-# # def book_details(request, primary_key):
-# #     try:
-# #         book = Buku.object.get
-#
-#
-# def borrower_list(request):
-#
-#     #get all borrower info
-#     if request.method == 'GET':
-#         borrowers = Peminjam.objects.all()
-#         serializer = PeminjamSerializer(borrowers, many=True)
-#         return JsonResponse(serializer.data, safe=False)
-#
-#     elif request.method == 'POST':
-#         data = JSONParser().parse(request)
-#         serializer = PeminjamSerializer(data=data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return JsonResponse(serializer.data, status=201)
-#         return JsonResponse(serializer.errors, status=400)

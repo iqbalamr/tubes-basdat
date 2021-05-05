@@ -5,7 +5,7 @@ from .models import (
     Peminjam,
     Meminjam,
     Denda,
-    Petugas,
+    # Petugas,
     Pendataan,
     Mengurusi
 )
@@ -47,11 +47,11 @@ class DendaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class PetugasSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Petugas
-        fields = '__all__'
+# class PetugasSerializer(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = Petugas
+#         fields = '__all__'
 
 
 class PendataanSerializer(serializers.ModelSerializer):
