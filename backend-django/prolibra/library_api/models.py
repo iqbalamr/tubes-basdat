@@ -1,8 +1,18 @@
 from django.db import models
+from django_currentuser.db.models import CurrentUserField
+from django_currentuser.middleware import (
+    get_current_user, get_current_authenticated_user)
+from django.contrib.auth.models import User
 
 
-# from django.contrib.auth.models import User
 # Create your models here.
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    dob = models.DateField(null=True)
+
+    def __str__(self):
+        return  self.user.username
+
 
 class Lokasi(models.Model):
     no_lokasi = models.CharField(max_length=8, primary_key=True)
@@ -57,7 +67,7 @@ class Meminjam(models.Model):
     isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
     tanggal_peminjaman = models.DateTimeField(auto_now_add=True)
     tanggal_pengembalian = models.DateTimeField(auto_now=True,null=True)
-    status_peminjaman = models.CharField(max_length=10, null=True)
+    status_peminjaman = models.CharField(max_length=100, default="Belum dikembalikan")
 
 
 # class Mahasiswa(models.Model):
@@ -94,18 +104,18 @@ class Denda(models.Model):
         return self.id_peminjam
 
 
-class Petugas(models.Model):
-    id_petugas = models.CharField(max_length=15, primary_key=True)
-    nama_lengkap = models.CharField(max_length=100)
-    password = models.CharField(max_length=15)
-    tanggal_lahir = models.DateField()
-
-    def __str__(self):
-        return self.nama_lengkap
+# class Petugas(models.Model):
+#     id_petugas = models.CharField(max_length=15, primary_key=True)
+#     nama_lengkap = models.CharField(max_length=100)
+#     password = models.CharField(max_length=15)
+#     tanggal_lahir = models.DateField()
+#
+#     def __str__(self):
+#         return self.nama_lengkap
 
 
 class Pendataan(models.Model):
-    id_petugas = models.ForeignKey(Petugas, on_delete=models.CASCADE)
+    id_petugas = CurrentUserField()
     isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
     tanggal_pendataan = models.DateField(auto_now_add=True)
 
@@ -113,4 +123,4 @@ class Pendataan(models.Model):
 class Mengurusi(models.Model):
     tanggal_urusan = models.DateField(auto_now_add=True)
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-    id_petugas = models.ForeignKey(Petugas, on_delete=models.CASCADE)
+    id_petugas = CurrentUserField(get_current_authenticated_user())
