@@ -1,7 +1,15 @@
 from django.urls import path, include
-from .views import book_list, borrower_list
+from .views import BookList, BookDetail, BorrowerList, Borrow, BorrwerReturn, FinesList, Admin
+    # book_list, borrower_list
 
 urlpatterns = [
-    path('books', book_list),
-    path('borrowers', borrower_list),
+    path('books/', BookList.as_view()),
+    path('books/<str:judul_buku>/', BookDetail.as_view()),
+    path('borrowers/', BorrowerList.as_view()),
+    path('borrow/', Borrow.as_view()),
+    path('return/<str:id_peminjam>-<str:isbn>/', BorrwerReturn.as_view()),
+    path('fines/', FinesList.as_view()),
+    path('admins/', Admin.as_view()),
+    # path('books/', book_list),
+    # path('borrowers/', borrower_list),
 ]
