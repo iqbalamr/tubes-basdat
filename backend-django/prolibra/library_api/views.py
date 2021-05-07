@@ -19,10 +19,15 @@ from .serializers import (
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import APIView
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 # Create your views here.
 
 
 class BookList(APIView):
+
+    # authentication_classes = (TokenAuthentication)
 
     def get(self, request):
         books = Buku.objects.all()
@@ -38,6 +43,9 @@ class BookList(APIView):
 
 
 class BookDetail(APIView):
+
+    permission_classes = [IsAuthenticated]
+    # authentication_classes = (TokenAuthentication)
 
     def get_object(self, judul_buku):
         judul = judul_buku.replace("-", " ")

@@ -2,14 +2,15 @@
 .page-showbook {
   background-color: #0E0D27;
   padding: 0 !important;
-  height: 1920px;
+  height: 100% !important;
   .container{
     max-width:100%;
+    height: 100%;
     padding-right: 60px !important;
     padding-left: 60px !important;
     padding-top: 60px !important;
-    margin-right:auto;
-    margin-left: auto;
+    padding-bottom: 60px !important;
+    margin : 0 auto !important;
     background-color: #0E0D27;
     .row{
       max-width: 100% !important;
@@ -18,14 +19,28 @@
     }
     .showbook-row{
       padding-top: 30px;
-    }
-    .title-page{
-      margin-right: auto !important;
-      text-align: left!important;
-      h1{
-        font-weight: 800 !important;
-        color:#FFFFFF;
-        text-align: left!important;
+      display: flex;
+      justify-content: center !important;
+      margin: 0 auto !important;
+      .body-content{
+        justify-content: center !important;
+        margin: 0 auto !important;
+        display: inline-block;
+          
+        .book-cards{
+          display: inline-block;
+          justify-content: center;  
+          margin-bottom: 40px!important;
+          .title-page{
+            margin-right: auto !important;
+            
+              h1{
+                font-weight: 800 !important;
+                color:#FFFFFF;
+
+              }
+            } 
+        }
       }
     }
     .search-bar {
@@ -49,7 +64,7 @@
     .form-group .form-control-icon {
       position: absolute;
       z-index: 4;
-      display: block;
+      display: block !important;
       line-height: 3rem;
       text-align: center;
       pointer-events: none;
@@ -59,15 +74,6 @@
   }
 }
 
-
-.body-content {
-  display: flex;
-  margin : 0 auto !important;
-  padding: 0;
-  .showbook-card{
-    margin-top:40px !important;
-  }
-}
 @media (max-width: 980px) {
   h1 {
     font-size: 1.3rem !important;

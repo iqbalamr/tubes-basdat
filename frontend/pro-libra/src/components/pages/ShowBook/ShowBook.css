@@ -1,15 +1,16 @@
 .page-showbook {
   background-color: #0E0D27;
   padding: 0 !important;
-  height: 1920px;
+  height: 100% !important;
 }
 .page-showbook .container {
   max-width: 100%;
+  height: 100%;
   padding-right: 60px !important;
   padding-left: 60px !important;
   padding-top: 60px !important;
-  margin-right: auto;
-  margin-left: auto;
+  padding-bottom: 60px !important;
+  margin: 0 auto !important;
   background-color: #0E0D27;
 }
 .page-showbook .container .row {
@@ -19,15 +20,26 @@
 }
 .page-showbook .container .showbook-row {
   padding-top: 30px;
+  display: flex;
+  justify-content: center !important;
+  margin: 0 auto !important;
 }
-.page-showbook .container .title-page {
+.page-showbook .container .showbook-row .body-content {
+  justify-content: center !important;
+  margin: 0 auto !important;
+  display: inline-block;
+}
+.page-showbook .container .showbook-row .body-content .book-cards {
+  display: inline-block;
+  justify-content: center;
+  margin-bottom: 40px!important;
+}
+.page-showbook .container .showbook-row .body-content .book-cards .title-page {
   margin-right: auto !important;
-  text-align: left!important;
 }
-.page-showbook .container .title-page h1 {
+.page-showbook .container .showbook-row .body-content .book-cards .title-page h1 {
   font-weight: 800 !important;
   color: #FFFFFF;
-  text-align: left!important;
 }
 .page-showbook .container .search-bar {
   width: 320;
@@ -48,19 +60,11 @@
 .page-showbook .container .form-group .form-control-icon {
   position: absolute;
   z-index: 4;
-  display: block;
+  display: block !important;
   line-height: 3rem;
   text-align: center;
   pointer-events: none;
   color: #aaa;
-}
-.body-content {
-  display: flex;
-  margin: 0 auto !important;
-  padding: 0;
-}
-.body-content .showbook-card {
-  margin-top: 40px !important;
 }
 @media (max-width: 980px) {
   h1 {

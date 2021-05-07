@@ -1,7 +1,7 @@
 from django.db import models
-from django_currentuser.db.models import CurrentUserField
-from django_currentuser.middleware import (
-    get_current_user, get_current_authenticated_user)
+# from django_currentuser.db.models import CurrentUserField
+# from django_currentuser.middleware import (
+#     get_current_user, get_current_authenticated_user)
 from django.contrib.auth.models import User
 
 
@@ -56,17 +56,17 @@ class Peminjam(models.Model):
     no_telepon = models.CharField(max_length=13)
     nim = models.CharField(max_length=9, null=True)
     nip = models.CharField(max_length=18, null=True)
-    tipe = models.CharField(max_length=10, null=True)
+    tipe = models.CharField(max_length=10)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
 
 class Meminjam(models.Model):
-    id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-    isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
-    tanggal_peminjaman = models.DateTimeField(auto_now_add=True)
-    tanggal_pengembalian = models.DateTimeField(auto_now=True,null=True)
+    id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE, blank=True)
+    isbn = models.ForeignKey(Buku, on_delete=models.CASCADE, blank=True)
+    tanggal_peminjaman = models.DateTimeField(blank=True)
+    tanggal_pengembalian = models.DateTimeField(null=True, blank=True)
     status_peminjaman = models.CharField(max_length=100, default="Belum dikembalikan")
 
 
@@ -99,7 +99,7 @@ class Meminjam(models.Model):
 class Denda(models.Model):
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
     jumlah_denda = models.CharField(max_length=20)
-
+    
     def __str__(self):
         return self.id_peminjam
 
@@ -115,12 +115,13 @@ class Denda(models.Model):
 
 
 class Pendataan(models.Model):
-    id_petugas = CurrentUserField()
+    id_petugas = models.ForeignKey(User, on_delete=models.CASCADE)
     isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
-    tanggal_pendataan = models.DateField(auto_now_add=True)
+    tanggal_pendataan = models.DateTimeField()
 
 
 class Mengurusi(models.Model):
-    tanggal_urusan = models.DateField(auto_now_add=True)
+    tanggal_urusan = models.DateTimeField()
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-    id_petugas = CurrentUserField(get_current_authenticated_user())
+    id_petugas = models.ForeignKey(User, on_delete=models.CASCADE)
+    jenis = models.CharField(max_length=20, blank=True)
