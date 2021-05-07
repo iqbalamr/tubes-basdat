@@ -1,9 +1,12 @@
 .card {
-  display: inline-block;
+  display: flex !important;
   border-radius: 15px;
   margin: 0 auto!important;
   padding: 20px 20px 20px 20px;
   max-width: 700px !important;
+}
+.card .book-img {
+  width: 137px;
 }
 .card .book-picture {
   width: 137px;
