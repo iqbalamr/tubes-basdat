@@ -31,7 +31,7 @@ class Buku(models.Model):
     kategori = models.CharField(max_length=10)
     no_lokasi = models.ForeignKey(Lokasi, on_delete=models.CASCADE)
     sinopsis = models.TextField(max_length=1000)
-    gambar = models.ImageField(upload_to='book_images/', default=None)
+    gambar = models.ImageField(upload_to='book_images/')
 
     class Meta:
         ordering = ('-judul_buku',)

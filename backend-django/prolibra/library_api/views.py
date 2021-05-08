@@ -21,20 +21,20 @@ from rest_framework import status
 from rest_framework.decorators import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-
+from rest_framework.parsers import MultiPartParser, FormParser
 # Create your views here.
 
 
 class BookList(APIView):
 
     # authentication_classes = (TokenAuthentication)
-
+    parser_classes = [MultiPartParser, FormParser]
     def get(self, request):
         books = Buku.objects.all()
         serializer = BukuSerializer(books, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         serializer = BukuSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

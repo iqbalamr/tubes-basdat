@@ -73,7 +73,7 @@ const routes = [
 ];
 function ManageBook() {
   return (
-    <Container >
+    <Container className="container-manage-book" >
     <Row className="main-body" > 
     <Col md={3} xs={12} className="leftbar-add-column" >
       <div className="leftbar-add-menus">
