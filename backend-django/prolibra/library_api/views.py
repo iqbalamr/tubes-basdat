@@ -47,22 +47,22 @@ class BookDetail(APIView):
     permission_classes = [IsAuthenticated]
     # authentication_classes = (TokenAuthentication)
 
-    def get_object(self, judul_buku):
-        judul = judul_buku.replace("-", " ")
+    def get_object(self, isbn):
+        isbn = isbn
         try:
-            return Buku.objects.get(judul_buku=judul)
+            return Buku.objects.get(isbn=isbn)
         except Buku.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-    def get(self, request, judul_buku):
-        judul = judul_buku.replace("-", " ")
-        book = self.get_object(judul)
+    def get(self, request, isbn):
+        isbn = isbn
+        book = self.get_object(isbn)
         serializer = BukuSerializer(book)
         return Response(serializer.data)
 
-    def delete(self, request, judul_buku):
-        judul = judul_buku.replace("-", " ")
-        book = self.get_object(judul)
+    def delete(self, request, isbn):
+        isbn = isbn
+        book = self.get_object(isbn)
         book.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 

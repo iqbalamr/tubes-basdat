@@ -8,14 +8,16 @@ import {
 import './RemoveBook.css';
 // import Pictures from '../../../assets/Images/test.jpg';
 import Card from 'react-bootstrap/Card';
+import APIService from '../../../APIService';
 
 function ShowBook() {
 	// const [search,setSearch] = useState("");
   const [searchText, setSearchText] = useState("");
 	
 	const [books, setBooks] = useState([]);
-	
 
+  const [isbn, setisbn] = useState("");
+	
 	useEffect(() => {
 		fetch('http://127.0.0.1:8000/api/books', {
 			'method': 'GET',
@@ -27,8 +29,6 @@ function ShowBook() {
 		.then((json) => setBooks(json))
 		.catch(err => console.log(err))
 	}, [])
-
-  
 
 	const [data, setData] = useState(books);	
 	
@@ -52,86 +52,93 @@ function ShowBook() {
     }
   }
 
-  const BoookCardRemover = (props) => {
-    return(
-      <Card className="book-cards">
-      <div className="book-img">
-        <Card.Img className="book-picture" src={props.pictures}/>
-      </div>
-      <Card.Body className="book-detail">
-        <Card.Title>
-          <h2>{props.title}</h2>
-        </Card.Title>
-        <div>
-          <div>
-            <label>
-              <h4>ISBN:</h4>
-            </label>{" "}
-            {props.isbn}
-          </div>
-          <div>
-            <label>
-              <h4>Writer:</h4>
-            </label>{" "}
-            {props.writer}
-          </div>
-          <div>
-            <label>
-              <h4>Publisher:</h4>
-            </label>{" "}
-            {props.publisher}
-          </div>
-          <div>
-            <label>
-              <h4>Book Stock:</h4>
-            </label>{" "}
-            {props.stock}
-          </div>
-          <div>
-            <label>
-              <h4>Category:</h4>
-            </label>{" "}
-              {props.category}
-          </div>
-          <div>
-            <label>
-              <h4>Lokasi:</h4>
-            </label>{" "}
-              {props.location}
-          </div>
-          <div>
-            <label>
-              <h4>Sinopsis:</h4>
-            </label>{" "}
-              {props.text}
-          </div>
-        </div>
-      </Card.Body>
-      <Button 
-          className="remove-button" 
-          variant="primary">
-            Remove
-          </Button>
-    </Card>
-    );
+  function deleteBook  (isbn) {
+    APIService.DeleteBook(isbn)
+    .then(response => console.log(response))
+  };
+
+  console.log(isbn);
+  const handleISBN = isbn => ev => {
+    setisbn(isbn)
+    setTimeout(() => {deleteBook(isbn)},500)
+    setTimeout(() => {refreshPage()},1000);
+  };
+
+  function refreshPage() {
+    window.location.reload(false);
   };
 
 	const SecondData = () => {
 		return (
 			<>
-			{data.map((book) => {
+			{data.map(({judul_buku, isbn, penulis, penerbit, jumlah_buku, kategori, no_lokasi, sinopsis, gambar}) => {
 				return (
-					<BoookCardRemover 
-					pictures= {'http://127.0.0.1:8000' + book.gambar}
-					title= {book.judul_buku}
-					isbn= {book.isbn}
-					writer= {book.penulis}
-					publisher= {book.penerbit}
-					stock={book.jumlah_buku}
-					category={book.kategori}
-					location={book.no_lokasi}
-					text={book.sinopsis}
-				/>  
+					<Card className="book-cards">
+            <div className="book-img">
+              <Card.Img className="book-picture" src={'http://127.0.0.1:8000' + gambar}/>
+            </div>
+            <Card.Body className="book-detail">
+              <Card.Title>
+                <h2>{judul_buku}</h2>
+              </Card.Title>
+              <div>
+                <div>
+                  <label>
+                    <h4>ISBN:</h4>
+                  </label>{" "}
+                  {isbn}
+                </div>
+                <div>
+                  <label>
+                    <h4>Writer:</h4>
+                  </label>{" "}
+                  {penulis}
+                </div>
+                <div>
+                  <label>
+                    <h4>Publisher:</h4>
+                  </label>{" "}
+                  {penerbit}
+                </div>
+                <div>
+                  <label>
+                    <h4>Book Stock:</h4>
+                  </label>{" "}
+                  {jumlah_buku}
+                </div>
+                <div>
+                  <label>
+                    <h4>Category:</h4>
+                  </label>{" "}
+                    {kategori}
+                </div>
+                <div>
+                  <label>
+                    <h4>Lokasi:</h4>
+                  </label>{" "}
+                    {no_lokasi}
+                </div>
+                <div>
+                  <label>
+                    <h4>Sinopsis:</h4>
+                  </label>{" "}
+                    {sinopsis}
+                </div>
+              </div>
+            </Card.Body>
+            <Button 
+              className="remove-button" 
+              variant="primary"
+              // onClick={
+              //   deleteBook(isbn)
+              // }
+              onClick={
+                handleISBN(isbn)
+              }
+            >
+                  Remove
+                </Button>
+          </Card>
 				);
 			})}
 			{data.length === 0 && <h1 className="alert">No records found to display!</h1>}
@@ -140,19 +147,75 @@ function ShowBook() {
 	}
 	const  FirstData = () => {
 		return (
-			books.map((book) => {
+		books.map(({judul_buku, isbn, penulis, penerbit, jumlah_buku, kategori, no_lokasi, sinopsis, gambar}) => {
 				return (
-					<BoookCardRemover 
-					pictures= {'http://127.0.0.1:8000' + book.gambar}
-					title= {book.judul_buku}
-					isbn= {book.isbn}
-					writer= {book.penulis}
-					publisher= {book.penerbit}
-					stock={book.jumlah_buku}
-					category={book.kategori}
-					location={book.no_lokasi}
-					text={book.sinopsis}
-				/>  
+					<Card className="book-cards">
+            <div className="book-img">
+              <Card.Img className="book-picture" src={'http://127.0.0.1:8000' + gambar}/>
+            </div>
+            <Card.Body className="book-detail">
+              <Card.Title>
+                <h2>{judul_buku}</h2>
+              </Card.Title>
+              <div>
+                <div>
+                  <label>
+                    <h4>ISBN:</h4>
+                  </label>{" "}
+                  {isbn}
+                </div>
+                <div>
+                  <label>
+                    <h4>Writer:</h4>
+                  </label>{" "}
+                  {penulis}
+                </div>
+                <div>
+                  <label>
+                    <h4>Publisher:</h4>
+                  </label>{" "}
+                  {penerbit}
+                </div>
+                <div>
+                  <label>
+                    <h4>Book Stock:</h4>
+                  </label>{" "}
+                  {jumlah_buku}
+                </div>
+                <div>
+                  <label>
+                    <h4>Category:</h4>
+                  </label>{" "}
+                    {kategori}
+                </div>
+                <div>
+                  <label>
+                    <h4>Lokasi:</h4>
+                  </label>{" "}
+                    {no_lokasi}
+                </div>
+                <div>
+                  <label>
+                    <h4>Sinopsis:</h4>
+                  </label>{" "}
+                    {sinopsis}
+                </div>
+              </div>
+            </Card.Body>
+            <Button 
+              className="remove-button" 
+              variant="primary"
+              // onClick={
+              //   deleteBook(isbn)
+              // }
+              onClick={
+                handleISBN(isbn)
+              }
+            >
+                  Remove
+                </Button>
+          </Card>
+				
 				);
 			})
 		);
@@ -186,9 +249,11 @@ function ShowBook() {
         </div>
       </Col>
     </Row>
+    <Col className="remove-book-column">
     <Row className="remove-book-row">
       <BooksCards isTexted={searchText}/>
     </Row>
+    </Col>
   </>
   )
 }

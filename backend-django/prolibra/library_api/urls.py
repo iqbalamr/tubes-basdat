@@ -4,7 +4,7 @@ from .views import BookList, BookDetail, BorrowerList, Borrow, BorrwerReturn, Fi
 
 urlpatterns = [
     path('api/books/', BookList.as_view()),
-    path('api/books/<str:judul_buku>/', BookDetail.as_view()),
+    path('api/books/<str:isbn>/', BookDetail.as_view()),
     path('api/borrowers/', BorrowerList.as_view()),
     path('api/borrow/', Borrow.as_view()),
     path('api/return/<str:id_peminjam>-<str:isbn>/', BorrwerReturn.as_view()),

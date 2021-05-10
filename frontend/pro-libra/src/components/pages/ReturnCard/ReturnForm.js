@@ -45,17 +45,23 @@ function ReturnForm(){
   
   function finesCount () {
     setTimeout(() => {APIService.Fines({id_peminjam, jumlah_denda})
-    .then(response => console.log(response))},3000);
+    .then(response => console.log(response))},500);
   };
 
   function insertServices () {
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},2000);
+    .then(response => console.log(response))},500);
   };
 
   function returnBook () {
     APIService.ReturnBook(id_peminjam, isbn, {status_peminjaman, tanggal_pengembalian})
     .then(response => console.log(response))
+  };
+
+   function refreshPage() {
+    setTimeout(() => {
+      window.location.reload(false)
+    },3000 );
   };
 
   return (
@@ -125,6 +131,7 @@ function ReturnForm(){
               returnBook();
               finesCount();
               insertServices();
+              refreshPage();
             }}
             variant="primary"
           >
