@@ -60,19 +60,17 @@ function ReturnForm(){
       if (totalDay>Number(7)){
         jumlah_denda = (totalDay - 7) * 10000;
         jumlah_hari_telat = totalDay - 7;
+        setTimeout(() => {APIService.Fines({id_peminjam, jumlah_denda, jumlah_hari_telat})
+        .then(response => console.log(response))},500);
       }
-
       console.log(jumlah_denda)
       console.log(jumlah_hari_telat)
-
-      setTimeout(() => {APIService.Fines({id_peminjam, jumlah_denda, jumlah_hari_telat})
-        .then(response => console.log(response))},500);
-    },300)
+    },1000)
   };
 
   function insertServices () {
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},500);
+    .then(response => console.log(response))},1000);
   };
 
   function returnBook () {

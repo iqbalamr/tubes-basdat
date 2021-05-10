@@ -15,7 +15,8 @@ from .serializers import (
     MengurusiSerializer,
     InfoMengurusiSerializer,
     InfoDendaSerializer,
-    PendataanSerializer
+    PendataanSerializer,
+    InfoMeminjamSerializer
 )
 # from django.http import JsonResponse
 # from rest_framework.parsers import JSONParser
@@ -99,6 +100,15 @@ class Borrow(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class BorrowInfo(APIView):
+
+    def get(self, request):
+        borrows = Meminjam.objects.all()
+        serializer = InfoMeminjamSerializer(borrows, many=True)
+        return Response(serializer.data)
 
 
 class BorrwerReturn(APIView):

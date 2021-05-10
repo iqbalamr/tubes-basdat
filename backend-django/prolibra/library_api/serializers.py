@@ -52,7 +52,8 @@ class InfoMeminjamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meminjam
         fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
-    isbn = BukuSerializer(many=False)
+    # isbn = BukuSerializer(many=False)
+    id_peminjam = PeminjamSerializer(many=False)
 
 
 class InfoDendaSerializer(serializers.ModelSerializer):
