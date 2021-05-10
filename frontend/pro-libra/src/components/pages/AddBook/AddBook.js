@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import RouteWithSubRoutes from '../../../utils/RouteWithSubRoutes';
 import './AddBook.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import APIService from '../../../APIService';
+import moment from 'moment';  
 // import routes from '../../../Routes';
 
 const AddBook = () => {
@@ -22,6 +24,9 @@ const AddBook = () => {
   const [no_lokasi, setno_lokasi] = useState('');
   const [sinopsis, setsinopsis] = useState('');
   const [gambar, setgambar] = useState(null);
+  const [id_petugas, setid_petugas] = useState(null);
+  var tanggal_pendataan = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+
   
   let formData = new FormData();
   formData.append('isbn', isbn);
@@ -45,9 +50,16 @@ const AddBook = () => {
       .then(response => console.log(response))
   }
 
+  function recordingBook () {
+    setTimeout(() => {APIService.RecordingBook({id_petugas, isbn,tanggal_pendataan})
+    .then(response => console.log(response))},1000);
+  };
+
   function refreshPage() {
-    window.location.reload(false);
-  }
+    setTimeout(() => {
+      window.location.reload(false)
+    },3000 );
+  };
 
   // function setToDefault () {
   //   setisbn('');
@@ -211,6 +223,21 @@ const AddBook = () => {
                 </Col>
               </Form.Row>
               <br />
+              <Form.Row>
+                <Form.Label column lg={2} className="form-label">
+                  Your ID
+                </Form.Label>
+                <Col className="input-column">
+                  <Form.Control 
+                    size="lg" 
+                    type="number" 
+                    placeholder="Your admin id" 
+                    className="input-field"
+                    onChange={(e) => setid_petugas(e.target.value)}
+                  />
+                </Col>
+              </Form.Row>
+              <br />
             </Form.Group>  
           </div>  
           <Button 
@@ -218,8 +245,8 @@ const AddBook = () => {
             variant="primary"
             onClick= {()=>{
               insertBook();
-              setTimeout(() => {refreshPage()},2000);
-              
+              refreshPage();
+              recordingBook();
             }}
           >
             Submit

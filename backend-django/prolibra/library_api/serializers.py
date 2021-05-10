@@ -59,15 +59,15 @@ class InfoDendaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Denda
-        fields = ('id_peminjam', 'jumlah_denda')
-    id_peminjam = MeminjamSerializer(many=False)
+        fields = ('id_peminjam', 'jumlah_denda', 'jumlah_hari_telat', 'status')
+    id_peminjam = PeminjamSerializer(many=False)
 
 
 class DendaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Denda
-        fields = ('id_peminjam', 'jumlah_denda')
+        fields = ('id_peminjam', 'jumlah_denda', 'jumlah_hari_telat', 'status')
     
 
 # class PetugasSerializer(serializers.ModelSerializer):
@@ -105,3 +105,11 @@ class MengurusiSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mengurusi
         fields = '__all__'
+
+
+class PendataanSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Pendataan
+        fields = '__all__'
+

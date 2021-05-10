@@ -4,14 +4,18 @@ from .models import (
     Peminjam,
     Meminjam,
     Denda,
-    Mengurusi
+    Mengurusi,
+    Pendataan
 )
 from .serializers import (
     BukuSerializer,
     MeminjamSerializer,
     PeminjamSerializer,
     DendaSerializer,
-    MengurusiSerializer
+    MengurusiSerializer,
+    InfoMengurusiSerializer,
+    InfoDendaSerializer,
+    PendataanSerializer
 )
 # from django.http import JsonResponse
 # from rest_framework.parsers import JSONParser
@@ -124,7 +128,7 @@ class BorrwerReturn(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class FinesList(APIView):
+class Fines(APIView):
 
     def get(self, request):
         fines = Denda.objects.all()
@@ -139,7 +143,15 @@ class FinesList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class ServicesList(APIView):
+class FinesList(APIView):
+
+    def get(self, request):
+        fines = Denda.objects.all()
+        serializer = InfoDendaSerializer(fines, many=True)
+        return Response(serializer.data)
+
+
+class Services(APIView):
 
     def get(self, request):
         services = Mengurusi.objects.all()
@@ -148,6 +160,29 @@ class ServicesList(APIView):
 
     def post(self, request):
         serializer = MengurusiSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ServicesList(APIView):
+
+    def get(self, request):
+        services = Mengurusi.objects.all()
+        serializer = InfoMengurusiSerializer(services, many=True)
+        return Response(serializer.data)
+
+
+class RecordingBook(APIView):
+
+    def get(self, request):
+        record = Pendataan.objects.all()
+        serializer = PendataanSerializer(record, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = PendataanSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

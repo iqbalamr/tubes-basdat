@@ -79,5 +79,18 @@ export default class APIService {
 
   }
 
+  static RecordingBook(body) {
+
+    return fetch (`http://127.0.0.1:8000/api/recording-book/`, {
+      'method': 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
+			},
+        body: JSON.stringify(body)
+    }).then(response => response.json())
+
+  }
+
 
 }

@@ -99,7 +99,8 @@ class Meminjam(models.Model):
 class Denda(models.Model):
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
     jumlah_denda = models.CharField(max_length=20)
-    
+    jumlah_hari_telat = models.IntegerField()
+    status = models.CharField(max_length=20, default="Hutang", blank=True)
     def __str__(self):
         return self.id_peminjam
 
