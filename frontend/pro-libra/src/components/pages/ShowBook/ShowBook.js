@@ -8,11 +8,11 @@ import './ShowBook.css';
 // import Pictures from '../../../assets/Images/test.jpg';
 
 function ShowBook() {
+
 	const [searchText, setSearchText] = useState("");
 	
 	const [books, setBooks] = useState([]);
 	
-
 	useEffect(() => {
 		fetch('http://127.0.0.1:8000/api/books', {
 			'method': 'GET',
@@ -74,20 +74,21 @@ function ShowBook() {
 			books.map((book) => {
 				return (
 					<BoookCard 
-					pictures= {'http://127.0.0.1:8000' + book.gambar}
-					title= {book.judul_buku}
-					isbn= {book.isbn}
-					writer= {book.penulis}
-					publisher= {book.penerbit}
-					stock={book.jumlah_buku}
-					category={book.kategori}
-					location={book.no_lokasi}
-					text={book.sinopsis}
+						pictures= {'http://127.0.0.1:8000' + book.gambar}
+						title= {book.judul_buku}
+						isbn= {book.isbn}
+						writer= {book.penulis}
+						publisher= {book.penerbit}
+						stock={book.jumlah_buku}
+						category={book.kategori}
+						location={book.no_lokasi}
+						text={book.sinopsis}
 				/>  
 				);
 			})
 		);
 	}
+
 	function BooksCards(props){
 		const isTexted = props.isTexted;
 		if (isTexted==="") {

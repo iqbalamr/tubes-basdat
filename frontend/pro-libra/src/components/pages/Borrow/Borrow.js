@@ -40,7 +40,7 @@ function Borrow() {
           </div>  
         </Col>
         <Col md={9} xs={12} className="borrow-form-column">
-        <Switch>
+      <Switch>
       <Route path="/borrow/borrow-form">
         <BorrowForm/>
       </Route>
