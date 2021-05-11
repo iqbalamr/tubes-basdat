@@ -13,16 +13,12 @@ function ReturnForm(){
   const [isbn, setisbn] = useState('');
   const [id_peminjam, setid_peminjam] = useState('');
   let setData= [];
-  // const [jumlah_denda, setjumlah_denda] = useState(0);
   const status_peminjaman = "Sudah dikembalikan";
   const jenis = "Pengembalian";
   const [id_petugas, setid_petugas] = useState();
   var tanggal_urusan = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
   var tanggal_pengembalian = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 
-	// useEffect(() => {
-	
-	// }, []);
   
   const request = (async ()=> {
     
@@ -52,18 +48,18 @@ function ReturnForm(){
       var jumlah_hari_telat = 0;
 
       // console.log(dateBorrow)
-      console.log(setData.tanggal_peminjaman);
-      console.log(tanggal_pengembalian)
-      console.log(totalDay);
+      // console.log(setData.tanggal_peminjaman);
+      // console.log(tanggal_pengembalian)
+      // console.log(totalDay);
 
       if (totalDay>Number(7)){
-        jumlah_denda = (totalDay - 7) * 10000;
+        jumlah_denda = (totalDay - 7) * 1000;
         jumlah_hari_telat = totalDay - 7;
         setTimeout(() => {APIService.Fines({id_peminjam, jumlah_denda, jumlah_hari_telat})
         .then(response => console.log(response))},500);
       }
-      console.log(jumlah_denda)
-      console.log(jumlah_hari_telat)
+      // console.log(jumlah_denda)
+      // console.log(jumlah_hari_telat)
     },1000)
   };
 

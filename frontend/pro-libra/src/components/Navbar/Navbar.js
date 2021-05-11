@@ -6,12 +6,12 @@ import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function NavigationBar (){
+function NavigationBar(){
   
   return (
 	<header className="navbar-container">
-		<Navbar className="navbar-a" expand="lg" fixed="top" >
-			<Navbar.Brand >
+		<Navbar className="navbar-a" expand="lg" fixed="top">
+			<Navbar.Brand>
         <Link className="home" exact to='/home'>
           PRO Libra
         </Link>
@@ -36,6 +36,7 @@ function NavigationBar (){
 		</Navbar>
 	</header>
 	);
-}
+
+};
 
 export default withRouter(NavigationBar);

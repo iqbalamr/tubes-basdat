@@ -8,7 +8,7 @@ export default class APIService {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-							},
+			},
         body: JSON.stringify(body)
     }).then(response => response.json())
 
@@ -69,6 +69,7 @@ export default class APIService {
       'method': 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
+        // 'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			},
     }).then(response => response.json())
 
@@ -85,17 +86,5 @@ export default class APIService {
     }).then(response => response.json())
 
   }
-
-  // static Login(body) {
-
-  //   return fetch (`http://127.0.0.1:8000/auth/`, {
-  //     'method': 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		},
-  //       body: JSON.stringify(body)
-  //   }).then(response => response.json())
-
-  // }
 
 }
