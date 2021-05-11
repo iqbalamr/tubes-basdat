@@ -1,11 +1,7 @@
 from django.db import models
-# from django_currentuser.db.models import CurrentUserField
-# from django_currentuser.middleware import (
-#     get_current_user, get_current_authenticated_user)
 from django.contrib.auth.models import User
 
 
-# Create your models here.
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     dob = models.DateField(null=True)
@@ -43,10 +39,6 @@ class Buku(models.Model):
         return f'/{self.judul_buku.replace(" ","-")}'
 
 
-# class Mengembalikan(models.Model):
-#   id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-#    isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
-
 class Peminjam(models.Model):
     id_peminjam = models.CharField(max_length=11, primary_key=True)
     first_name = models.CharField(max_length=10)
@@ -70,32 +62,6 @@ class Meminjam(models.Model):
     status_peminjaman = models.CharField(max_length=100, default="Belum dikembalikan")
 
 
-# class Mahasiswa(models.Model):
-#     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-#     first_name = models.CharField(max_length=10)
-#     last_name = models.CharField(max_length=30, null=True)
-#     dept_name = models.CharField(max_length=30)
-#     alamat = models.CharField(max_length=100)
-#     no_telepon = models.CharField(max_length=13)
-#     nim = models.CharField(max_length=9)
-#
-#     def __str__(self):
-#         return f'{self.first_name} {self.last_name}'
-
-
-# class Dosen(models.Model):
-#     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
-#     first_name = models.CharField(max_length=10)
-#     last_name = models.CharField(max_length=30, null=True)
-#     dept_name = models.CharField(max_length=30)
-#     alamat = models.CharField(max_length=100)
-#     no_telepon = models.CharField(max_length=13)
-#     nip = models.CharField(max_length=18)
-#
-#     def __str__(self):
-#         return f'{self.first_name} {self.last_name}'
-#
-
 class Denda(models.Model):
     id_peminjam = models.ForeignKey(Peminjam, on_delete=models.CASCADE)
     jumlah_denda = models.CharField(max_length=20)
@@ -103,16 +69,6 @@ class Denda(models.Model):
     status = models.CharField(max_length=20, default="Hutang", blank=True)
     def __str__(self):
         return self.id_peminjam
-
-
-# class Petugas(models.Model):
-#     id_petugas = models.CharField(max_length=15, primary_key=True)
-#     nama_lengkap = models.CharField(max_length=100)
-#     password = models.CharField(max_length=15)
-#     tanggal_lahir = models.DateField()
-#
-#     def __str__(self):
-#         return self.nama_lengkap
 
 
 class Pendataan(models.Model):

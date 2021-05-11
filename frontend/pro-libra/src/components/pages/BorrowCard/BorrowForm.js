@@ -35,12 +35,12 @@ function BorrowForm(){
 
   function insertBorrowForm () {
     setTimeout(() => {APIService.InsertBorrowForm({id_peminjam,isbn, tanggal_peminjaman})
-    .then(response => console.log(response))},300);
+    .then(response => console.log(response))},3000);
   };
 
   function insertServices () {
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},500);
+    .then(response => console.log(response))},5000);
   };
 
   function refreshPage() {

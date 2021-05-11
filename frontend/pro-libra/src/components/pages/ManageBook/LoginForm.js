@@ -4,9 +4,6 @@ import {
   Button,
   Card
 } from 'react-bootstrap';
-// import APIService from '../../../APIService';
-// import {Link, useHistory} from 'react-router-dom';
-// import {useCookies} from 'react-cookie';
 import './ManageBook.css';
 import PropTypes from 'prop-types';
 
@@ -25,24 +22,6 @@ function LoginForm ({ setToken }){
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [token, setToken] = useCookies(['mytoken']);
-  
-  // let history = useHistory();
-
-  // useEffect(() => {
-  //   if(token['mytoken']){
-  //     history.push('/manage-book')
-  //   }
-    // else{
-      // history.push('/login')
-    // }
-  // },[token])
-  
-  // const loginBtn = () => {
-  //   APIService.Login({username, password})
-  //   .then(resp => setToken('mytoken',resp.token))
-  //   .catch(error => console.log(error))
-  // }
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -89,7 +68,7 @@ function LoginForm ({ setToken }){
           variant="primary"
           onClick={handleSubmit}  
         >
-           enter {/* <Link className="login-link" to="/manage-book/add-book" >Login</Link> */}
+           enter
         </Button>
       </Card.Body>
       </Card>

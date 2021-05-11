@@ -5,7 +5,6 @@ from .models import (
     Peminjam,
     Meminjam,
     Denda,
-    # Petugas,
     Pendataan,
     Mengurusi
 )
@@ -44,7 +43,6 @@ class MeminjamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meminjam
         fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
-    # isbn = BukuSerializer(many=False)
 
 
 class InfoMeminjamSerializer(serializers.ModelSerializer):
@@ -52,7 +50,6 @@ class InfoMeminjamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meminjam
         fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
-    # isbn = BukuSerializer(many=False)
     id_peminjam = PeminjamSerializer(many=False)
 
 
@@ -69,13 +66,6 @@ class DendaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Denda
         fields = ('id_peminjam', 'jumlah_denda', 'jumlah_hari_telat', 'status')
-    
-
-# class PetugasSerializer(serializers.ModelSerializer):
-#
-#     class Meta:
-#         model = Petugas
-#         fields = '__all__'
 
 
 class PendataanSerializer(serializers.ModelSerializer):
@@ -94,12 +84,6 @@ class InfoMengurusiSerializer(serializers.ModelSerializer):
     id_peminjam = PeminjamSerializer(many=False)
     id_petugas = CurrentUserSerializer(many=False)
 
-    # def to_representation(self, instance):
-    #     data = super(MengurusiSerializer, self).to_representation(instance)
-    #     id_peminjam = data.pop('id_peminjam')
-    #     for key, val in id_peminjam.items():
-    #         data.update({key: val})
-    #     return data
 
 class MengurusiSerializer(serializers.ModelSerializer):
 
