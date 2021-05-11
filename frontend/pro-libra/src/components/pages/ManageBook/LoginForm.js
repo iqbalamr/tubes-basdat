@@ -4,9 +4,9 @@ import {
   Button,
   Card
 } from 'react-bootstrap';
-import APIService from '../../../APIService';
-import {Link, useHistory} from 'react-router-dom';
-import {useCookies} from 'react-cookie';
+// import APIService from '../../../APIService';
+// import {Link, useHistory} from 'react-router-dom';
+// import {useCookies} from 'react-cookie';
 import './ManageBook.css';
 import PropTypes from 'prop-types';
 

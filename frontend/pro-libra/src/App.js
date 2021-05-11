@@ -8,12 +8,23 @@ import Home from './components/pages/Home/Home';
 import ShowBook from './components/pages/ShowBook/ShowBook';
 import Borrow from './components/pages/Borrow/Borrow';
 import ManageBook from './components/pages/ManageBook/ManageBook';
-import Login from './components/pages/ManageBook/LoginForm';
+import LoginForm from './components/pages/ManageBook/LoginForm';
 import OurTeam from './components/pages/OurTeam/OurTeam';
 import {CookiesProvider} from 'react-cookie';
 import ProtectedRoute from './utils/ProtectedRoute';
+import useToken from '../src/components/pages/ManageBook/useToken';
+
 function App() {
+  const { token, setToken } = useToken();
  
+  function CheckIfAuth(){
+    if(!token) {
+      return <LoginForm setToken={setToken} />
+    }
+    return <ManageBook/>
+    
+  }
+  
   return (
     <Router basename="/">
       <Navbar/>
@@ -31,7 +42,10 @@ function App() {
         {/* <Route path="/login">
           <Login/>
         </Route> */}
-        <Route path="/manage-book" component={ManageBook} /> 
+        <Route path="/manage-book">
+          <CheckIfAuth/>
+        </Route>
+          
         <Route path="/our-team">
           <OurTeam/>
         </Route>
