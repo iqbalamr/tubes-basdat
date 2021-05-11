@@ -4,14 +4,19 @@ from .models import (
     Peminjam,
     Meminjam,
     Denda,
-    Mengurusi
+    Mengurusi,
+    Pendataan
 )
 from .serializers import (
     BukuSerializer,
     MeminjamSerializer,
     PeminjamSerializer,
     DendaSerializer,
-    MengurusiSerializer
+    MengurusiSerializer,
+    InfoMengurusiSerializer,
+    InfoDendaSerializer,
+    PendataanSerializer,
+    InfoMeminjamSerializer
 )
 # from django.http import JsonResponse
 # from rest_framework.parsers import JSONParser
@@ -21,20 +26,28 @@ from rest_framework import status
 from rest_framework.decorators import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-
+from rest_framework.parsers import MultiPartParser, FormParser
 # Create your views here.
-
 
 class BookList(APIView):
 
     # authentication_classes = (TokenAuthentication)
-
+    parser_classes = [MultiPartParser, FormParser]
     def get(self, request):
         books = Buku.objects.all()
         serializer = BukuSerializer(books, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
+class InputBookList(APIView):
+
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+    def get(self, request):
+        books = Buku.objects.all()
+        serializer = BukuSerializer(books, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
         serializer = BukuSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -47,22 +60,22 @@ class BookDetail(APIView):
     permission_classes = [IsAuthenticated]
     # authentication_classes = (TokenAuthentication)
 
-    def get_object(self, judul_buku):
-        judul = judul_buku.replace("-", " ")
+    def get_object(self, isbn):
+        isbn = isbn
         try:
-            return Buku.objects.get(judul_buku=judul)
+            return Buku.objects.get(isbn=isbn)
         except Buku.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-    def get(self, request, judul_buku):
-        judul = judul_buku.replace("-", " ")
-        book = self.get_object(judul)
+    def get(self, request, isbn):
+        isbn = isbn
+        book = self.get_object(isbn)
         serializer = BukuSerializer(book)
         return Response(serializer.data)
 
-    def delete(self, request, judul_buku):
-        judul = judul_buku.replace("-", " ")
-        book = self.get_object(judul)
+    def delete(self, request, isbn):
+        isbn = isbn
+        book = self.get_object(isbn)
         book.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -97,6 +110,15 @@ class Borrow(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
+class BorrowInfo(APIView):
+
+    def get(self, request):
+        borrows = Meminjam.objects.all()
+        serializer = InfoMeminjamSerializer(borrows, many=True)
+        return Response(serializer.data)
+
+
 class BorrwerReturn(APIView):
 
     def get_object(self, id_peminjam, isbn):
@@ -124,7 +146,7 @@ class BorrwerReturn(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class FinesList(APIView):
+class Fines(APIView):
 
     def get(self, request):
         fines = Denda.objects.all()
@@ -139,7 +161,15 @@ class FinesList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class ServicesList(APIView):
+class FinesList(APIView):
+
+    def get(self, request):
+        fines = Denda.objects.all()
+        serializer = InfoDendaSerializer(fines, many=True)
+        return Response(serializer.data)
+
+
+class Services(APIView):
 
     def get(self, request):
         services = Mengurusi.objects.all()
@@ -148,6 +178,29 @@ class ServicesList(APIView):
 
     def post(self, request):
         serializer = MengurusiSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ServicesList(APIView):
+
+    def get(self, request):
+        services = Mengurusi.objects.all()
+        serializer = InfoMengurusiSerializer(services, many=True)
+        return Response(serializer.data)
+
+
+class RecordingBook(APIView):
+
+    def get(self, request):
+        record = Pendataan.objects.all()
+        serializer = PendataanSerializer(record, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = PendataanSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

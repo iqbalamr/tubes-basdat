@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function NavigationBar (){
+  
   return (
 	<header className="navbar-container">
 		<Navbar className="navbar-a" expand="lg" fixed="top" >

@@ -8,8 +8,7 @@ export default class APIService {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
-			},
+							},
         body: JSON.stringify(body)
     }).then(response => response.json())
 
@@ -21,7 +20,6 @@ export default class APIService {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			},
         body: JSON.stringify(body)
     }).then(response => response.json())
@@ -34,7 +32,7 @@ export default class APIService {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
+				
 			},
         body: JSON.stringify(body)
     }).then(response => response.json())
@@ -47,7 +45,6 @@ export default class APIService {
       'method': 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			},
         body: JSON.stringify(body)
     }).then(response => response.json())
@@ -60,11 +57,45 @@ export default class APIService {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			},
         body: JSON.stringify(body)
     }).then(response => response.json())
 
   }
+
+  static DeleteBook(isbn) {
+
+    return fetch (`http://127.0.0.1:8000/api/books/${isbn}/`, {
+      'method': 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+    }).then(response => response.json())
+
+  }
+
+  static RecordingBook(body) {
+
+    return fetch (`http://127.0.0.1:8000/api/recording-book/`, {
+      'method': 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+        body: JSON.stringify(body)
+    }).then(response => response.json())
+
+  }
+
+  // static Login(body) {
+
+  //   return fetch (`http://127.0.0.1:8000/auth/`, {
+  //     'method': 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+  //       body: JSON.stringify(body)
+  //   }).then(response => response.json())
+
+  // }
 
 }

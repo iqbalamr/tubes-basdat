@@ -35,12 +35,18 @@ function BorrowForm(){
 
   function insertBorrowForm () {
     setTimeout(() => {APIService.InsertBorrowForm({id_peminjam,isbn, tanggal_peminjaman})
-    .then(response => console.log(response))},3000);
+    .then(response => console.log(response))},300);
   };
 
   function insertServices () {
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},2000);
+    .then(response => console.log(response))},500);
+  };
+
+  function refreshPage() {
+    setTimeout(() => {
+      window.location.reload(false)
+    },1000 );
   };
     
   return( 
@@ -260,7 +266,8 @@ function BorrowForm(){
             onClick={()=>{
               insertBorrowerForm();
               insertBorrowForm();
-              insertServices();       
+              insertServices(); 
+              refreshPage();      
             }}
           >
             Submit

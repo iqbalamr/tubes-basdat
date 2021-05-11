@@ -18,7 +18,6 @@ function ShowBook() {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			}
 		})
 		.then((response)=> response.json())
@@ -28,7 +27,7 @@ function ShowBook() {
 
 	const [data, setData] = useState(books);	
 	
-	const excludeColumns = ["sinopsis", "jumlah_buku"];	
+	const excludeColumns = ["sinopsis", "jumlah_buku","penulis", "penerbit", "kategori", "no_lokasi", "gambar"];	
 
 	const handleChange = value => {
     setSearchText(value);
@@ -66,7 +65,7 @@ function ShowBook() {
 				/>  
 				);
 			})}
-			{data.length === 0 && <span>No records found to display!</span>}
+			{data.length === 0 && <h1 className="alert">No records found to display!</h1>}
 			</>
 		);
 	}
@@ -100,7 +99,7 @@ function ShowBook() {
 
   return (
     <div className = "page-showbook">
-				<Container className="container">
+				<Container className="container-showbook">
 					<Row className="justify-content-md-center ">
 						<Col className="title-page"  md={8}>
 							<h1>List of Book In Our Library</h1>
@@ -112,7 +111,7 @@ function ShowBook() {
 								<input 
 									type="text"
 								  className="form-control" 
-									placeholder="Search book..."
+									placeholder="Search book by title or isbn..."
 									value={searchText}
         					onChange={e => handleChange(e.target.value)}
 								/>

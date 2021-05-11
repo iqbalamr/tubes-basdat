@@ -4,6 +4,7 @@ import Borrow from './components/pages/Borrow/Borrow';
 import BorrowForm from './components/pages/BorrowCard/BorrowForm';
 import ReturnForm from './components/pages/ReturnCard/ReturnForm';
 import ManageBook from './components/pages/ManageBook/ManageBook';
+import Login from './components/pages/ManageBook/LoginForm';
 import OurTeam from './components/pages/OurTeam/OurTeam';
 // import BorrowerList from './components/pages/BorrowerList/BorrowerList';
 // import LibraryFines from './components/pages/LibraryFines/LibraryFines';
@@ -32,6 +33,11 @@ const routes = [
         component: ReturnForm,
       }
     ]
+  },
+  {
+    path: '/login',
+    component: Login,
+    
   },
   {
     path: '/manage-book',
