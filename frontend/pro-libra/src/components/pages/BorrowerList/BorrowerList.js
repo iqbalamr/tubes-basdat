@@ -30,6 +30,7 @@ function BorrowerList() {
                 <th>No</th>
                 <th>Name</th>
                 <th>ISBN of The Book</th>
+                {/* <th>Book's Title</th> */}
                 <th>Date of Borrow</th>
                 <th>Date of Return</th>
                 <th>Status</th>
@@ -42,6 +43,7 @@ function BorrowerList() {
                   <td>{index+1}</td>
                   <td>{info.id_peminjam.['first_name']} {info.id_peminjam.['last_name']}</td>
                   <td>{info.isbn}</td>
+                  {/* <td>{info.isbn}</td> */}
                   <td>{info.tanggal_peminjaman}</td>
                   <td>{info.tanggal_pengembalian}</td>
                   <td>{info.status_peminjaman}</td>

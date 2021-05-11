@@ -119,7 +119,7 @@ class BorrowInfo(APIView):
         return Response(serializer.data)
 
 
-class BorrwerReturn(APIView):
+class BorrowerReturn(APIView):
 
     def get_object(self, id_peminjam, isbn):
         try:

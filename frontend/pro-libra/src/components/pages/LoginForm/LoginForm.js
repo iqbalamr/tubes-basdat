@@ -4,7 +4,7 @@ import {
   Button,
   Card
 } from 'react-bootstrap';
-import './ManageBook.css';
+import '../LoginForm/LoginForm.css';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
@@ -33,7 +33,7 @@ function LoginForm ({ setToken }){
   }
 
   return(
-    <div className="login-col">
+  <div className="login-col">
    <div>
     <h1>Oopps you are not an admin, please login!</h1>
    </div>
@@ -68,7 +68,7 @@ function LoginForm ({ setToken }){
           variant="primary"
           onClick={handleSubmit}  
         >
-           enter
+          Enter
         </Button>
       </Card.Body>
       </Card>

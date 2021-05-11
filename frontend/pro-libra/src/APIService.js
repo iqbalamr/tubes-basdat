@@ -63,13 +63,13 @@ export default class APIService {
 
   }
 
-  static DeleteBook(isbn) {
+  static DeleteBook(isbn,token) {
 
     return fetch (`http://127.0.0.1:8000/api/books/${isbn}/`, {
       'method': 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
-        // 'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
+        'Authorization': `Token ${token}`
 			},
     }).then(response => response.json())
 

@@ -9,7 +9,6 @@ import {
 import './BorrowForm.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIService from '../../../APIService';
-// import Borrow from'../Borrow';
 
 function BorrowForm(){
    
