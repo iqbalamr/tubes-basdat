@@ -52,11 +52,13 @@ import useToken from './useToken';
 
 function ManageBook() {
  
-  // const { token, setToken } = useToken();
+  //to get the token
+  // const { token } = useToken();
+  // console.log(token)
  
-  if(!token) {
-    return <LoginForm setToken={setToken} />
-  }
+  // if(!token) {
+  //   return <LoginForm setToken={setToken} />
+  // }
   return (
     <Container className="container-manage-book" >
     <Row className="main-body" > 
@@ -118,19 +120,7 @@ function ManageBook() {
       </Col>
     </Row>
   </Container>
-    // <Container>
-    //   <Row className="justify-content-md-center main-body">
-    //     <Switch>
-    //     <Route path="/manage-book" component={AddBook}/>
-    //       <div className="login-page">
-    //         <LoginForm/>    
-    //       </div>
-    //       <AddBook/>
-    //     </Switch>
-        
-    //   </Row>
-    // </Container>
   )
-}
+};
 
 export default ManageBook;
