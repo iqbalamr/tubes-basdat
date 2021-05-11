@@ -29,10 +29,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 # Create your views here.
 
-
 class BookList(APIView):
 
     # authentication_classes = (TokenAuthentication)
+    parser_classes = [MultiPartParser, FormParser]
+    def get(self, request):
+        books = Buku.objects.all()
+        serializer = BukuSerializer(books, many=True)
+        return Response(serializer.data)
+
+class InputBookList(APIView):
+
+    permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
     def get(self, request):
         books = Buku.objects.all()

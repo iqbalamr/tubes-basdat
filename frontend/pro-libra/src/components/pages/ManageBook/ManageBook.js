@@ -1,76 +1,42 @@
 import React from 'react'
 import {
-  Form,
-  Button,
-  Card,
   Container,
   Row, 
   Col
 } from 'react-bootstrap';
 import './ManageBook.css';
-import {Link, Switch} from 'react-router-dom';
+import {Link, Switch, Route, withRouter} from 'react-router-dom';
 import RouteWithSubRoutes from '../../../utils/RouteWithSubRoutes';
 // import '../AddBook/AddBook.css';
 import AddBook from '../AddBook/AddBook';
 import BorrowerList from '../BorrowerList/BorrowerList';
 import LibraryFines from '../LibraryFines/LibraryFines';
 import RemoveBook from '../RemoveBook/RemoveBook';
-
+import LoginForm from './LoginForm';
+import {CookiesProvider} from 'react-cookie';
 // import routes from '../../../Routes';
 
-function LoginForm (){
-  return(
-    <div className="login-col">
-   <div>
-    <h1>Oopps you are not an admin, please login!</h1>
-   </div>
-   <div className="login-card">
-   <Card className="form-login-card">
-    <Card.Body>
-    <Card.Title >
-      <h2>Admin Login</h2>
-    </Card.Title>
-    <Form>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Label className="login-label">Username</Form.Label>
-          <Form.Control type="username" placeholder="Enter username" className="input-field"/>
-        </Form.Group>
-        <Form.Group controlId="formGroupPassword">
-          <Form.Label className="login-label" >Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" className="input-field" />
-        </Form.Group>
-      </Form>
-        <Button 
-          className="login-button" 
-          variant="primary">
-            <Link className="login-link" to="/manage-book/add-book" >Login</Link>
-        </Button>
-      </Card.Body>
-      </Card>
-   </div>
-     </div>
-  );
-};
 
-const routes = [
-    {
-      path: '/manage-book/add-book',
-      component: AddBook,
-    },
-    {
-      path: '/manage-book/remove-book',
-      component: RemoveBook,
-    },
-    {
-      path: '/manage-book/borrower-list',
-      component: BorrowerList,
-    },
-    {
-      path: '/manage-book/library-fines',
-      component: LibraryFines,
-    }
+
+// const routes = [
+//     {
+//       path: '/manage-book/add-book',
+//       component: AddBook,
+//     },
+//     {
+//       path: '/manage-book/remove-book',
+//       component: RemoveBook,
+//     },
+//     {
+//       path: '/manage-book/borrower-list',
+//       component: BorrowerList,
+//     },
+//     {
+//       path: '/manage-book/library-fines',
+//       component: LibraryFines,
+//     }
   
-];
+// ];
 function ManageBook() {
   return (
     <Container className="container-manage-book" >
@@ -112,18 +78,24 @@ function ManageBook() {
       </div>  
       </Col>
       <Col md={9} xs={12} className="right-column">
-      
+      <CookiesProvider>
       <Switch>
      
-        {routes.map((route, i) => (
+        {/* {routes.map((route, i) => (
             <RouteWithSubRoutes key={i} path={route.path} component={route.component}/>
-        ))}
+        ))} */}
+        <Route path="/manage-book/add-book" component={AddBook}/>
+        <Route path="/manage-book/remove-book" component={RemoveBook}/>
+        <Route path="/manage-book/borrower-list" component={BorrowerList}/>
+        <Route path="/manage-book/library-fines" component={LibraryFines}/>
         <div className="temporary-display">
           {/* <h1>Add The New Book...</h1> */}
           {/* <img className="borrow-img"src={BorrowImage} alt="img"/> */}
-           <LoginForm/>
+           {/* <LoginForm/> */}
+           <h1>Wellcome Home Admin! Hope You Have a Great Day</h1>
         </div>
       </Switch>  
+      </CookiesProvider>
       </Col>
     </Row>
   </Container>
@@ -142,4 +114,4 @@ function ManageBook() {
   )
 }
 
-export default ManageBook;
+export default withRouter(ManageBook);

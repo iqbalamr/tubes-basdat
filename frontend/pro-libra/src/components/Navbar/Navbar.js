@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function NavigationBar (){
+  
   return (
 	<header className="navbar-container">
 		<Navbar className="navbar-a" expand="lg" fixed="top" >
@@ -25,7 +26,7 @@ function NavigationBar (){
             <Link className="menu"  to="/borrow">Borrow</Link>
           </div>
           <div className="menus">
-            <Link className="menu"  to="/manage-book">Manage Book</Link>
+            <Link className="menu"  to="/login">Manage Book</Link>
           </div>
           <div className="menus">
             <Link className="menu"  to="/our-team">Our Team</Link>

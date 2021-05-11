@@ -14,7 +14,6 @@ function BorrowerList() {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
 			}
 		})
 		.then((response)=> response.json())
