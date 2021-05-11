@@ -5,7 +5,7 @@ import {
   Col
 } from 'react-bootstrap';
 import './ManageBook.css';
-import {Link, Switch, Route, withRouter} from 'react-router-dom';
+import {Link, Switch, Route} from 'react-router-dom';
 import RouteWithSubRoutes from '../../../utils/RouteWithSubRoutes';
 // import '../AddBook/AddBook.css';
 import AddBook from '../AddBook/AddBook';
@@ -13,7 +13,9 @@ import BorrowerList from '../BorrowerList/BorrowerList';
 import LibraryFines from '../LibraryFines/LibraryFines';
 import RemoveBook from '../RemoveBook/RemoveBook';
 import LoginForm from './LoginForm';
-import {CookiesProvider} from 'react-cookie';
+// import {CookiesProvider} from 'react-cookie';
+import useToken from './useToken';
+
 // import routes from '../../../Routes';
 
 
@@ -37,7 +39,24 @@ import {CookiesProvider} from 'react-cookie';
 //     }
   
 // ];
+
+// function setToken(userToken) {
+//   sessionStorage.setItem('token', JSON.stringify(userToken));
+// }
+
+// function getToken() {
+//   const tokenString = sessionStorage.getItem('token');
+//   const userToken = JSON.parse(tokenString);
+//   return userToken?.token
+// }
+
 function ManageBook() {
+ 
+  // const { token, setToken } = useToken();
+ 
+  if(!token) {
+    return <LoginForm setToken={setToken} />
+  }
   return (
     <Container className="container-manage-book" >
     <Row className="main-body" > 
@@ -78,7 +97,7 @@ function ManageBook() {
       </div>  
       </Col>
       <Col md={9} xs={12} className="right-column">
-      <CookiesProvider>
+      {/* <CookiesProvider> */}
       <Switch>
      
         {/* {routes.map((route, i) => (
@@ -95,7 +114,7 @@ function ManageBook() {
            <h1>Wellcome Home Admin! Hope You Have a Great Day</h1>
         </div>
       </Switch>  
-      </CookiesProvider>
+      {/* </CookiesProvider> */}
       </Col>
     </Row>
   </Container>
@@ -114,4 +133,4 @@ function ManageBook() {
   )
 }
 
-export default withRouter(ManageBook);
+export default ManageBook;

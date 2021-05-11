@@ -8,29 +8,49 @@ import APIService from '../../../APIService';
 import {Link, useHistory} from 'react-router-dom';
 import {useCookies} from 'react-cookie';
 import './ManageBook.css';
+import PropTypes from 'prop-types';
+
+async function loginUser(credentials) {
+  return fetch (`http://127.0.0.1:8000/auth/`, {
+      'method': 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+        body: JSON.stringify(credentials)
+    }).then(response => response.json())
+ }
 
 
-function LoginForm (){
+function LoginForm ({ setToken }){
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useCookies(['mytoken']);
+  // const [token, setToken] = useCookies(['mytoken']);
   
-  let history = useHistory();
+  // let history = useHistory();
 
-  useEffect(() => {
-    if(token['mytoken']){
-      history.push('/manage-book')
-    }
+  // useEffect(() => {
+  //   if(token['mytoken']){
+  //     history.push('/manage-book')
+  //   }
     // else{
-    //   history.push('/login')
+      // history.push('/login')
     // }
-  },[token])
+  // },[token])
   
-  const loginBtn = () => {
-    APIService.Login({username, password})
-    .then(resp => setToken('mytoken',resp.token))
-    .catch(error => console.log(error))
+  // const loginBtn = () => {
+  //   APIService.Login({username, password})
+  //   .then(resp => setToken('mytoken',resp.token))
+  //   .catch(error => console.log(error))
+  // }
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await loginUser({
+      username,
+      password
+    });
+    setToken(token);
   }
 
   return(
@@ -67,7 +87,7 @@ function LoginForm (){
         <Button 
           className="login-button" 
           variant="primary"
-          onClick={loginBtn}  
+          onClick={handleSubmit}  
         >
            enter {/* <Link className="login-link" to="/manage-book/add-book" >Login</Link> */}
         </Button>
@@ -78,4 +98,7 @@ function LoginForm (){
   );
 };
 
+LoginForm.propTypes = {
+  setToken: PropTypes.func.isRequired
+}
 export default LoginForm

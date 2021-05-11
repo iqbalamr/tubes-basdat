@@ -13,6 +13,7 @@ import OurTeam from './components/pages/OurTeam/OurTeam';
 import {CookiesProvider} from 'react-cookie';
 import ProtectedRoute from './utils/ProtectedRoute';
 function App() {
+ 
   return (
     <Router basename="/">
       <Navbar/>
@@ -27,11 +28,10 @@ function App() {
         <Route path="/borrow">
           <Borrow/>
         </Route>
-        <Route path="/login">
+        {/* <Route path="/login">
           <Login/>
-        </Route>
-        <ProtectedRoute path="/manage-book" component={ManageBook} isAuth={false}/>
-          
+        </Route> */}
+        <Route path="/manage-book" component={ManageBook} /> 
         <Route path="/our-team">
           <OurTeam/>
         </Route>
