@@ -9,9 +9,14 @@ import './RemoveBook.css';
 // import Pictures from '../../../assets/Images/test.jpg';
 import Card from 'react-bootstrap/Card';
 import APIService from '../../../APIService';
+import useToken from '../../../utils/useToken';
 
 function ShowBook() {
-	// const [search,setSearch] = useState("");
+
+  // to get the token
+  const { token } = useToken();
+  console.log(token)
+
   const [searchText, setSearchText] = useState("");
 	
 	const [books, setBooks] = useState([]);
@@ -21,8 +26,8 @@ function ShowBook() {
 	useEffect(() => {
 		fetch('http://127.0.0.1:8000/api/books', {
 			'method': 'GET',
-			headers: {
-				'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
+      headers: {
+				'Content-Type': 'application/json',
 			}
 		})
 		.then((response)=> response.json())
@@ -52,8 +57,8 @@ function ShowBook() {
     }
   }
 
-  function deleteBook  (isbn) {
-    APIService.DeleteBook(isbn)
+  function deleteBook  (isbn,token) {
+    APIService.DeleteBook(isbn,token)
     .then(response => console.log(response))
   };
 
@@ -61,7 +66,7 @@ function ShowBook() {
  
   const handleISBN = isbn => ev => {
     setisbn(isbn)
-    setTimeout(() => {deleteBook(isbn)},500)
+    setTimeout(() => {deleteBook(isbn,token)},500)
     setTimeout(() => {refreshPage()},1000);
   };
 
@@ -130,9 +135,6 @@ function ShowBook() {
             <Button 
               className="remove-button" 
               variant="primary"
-              // onClick={
-              //   deleteBook(isbn)
-              // }
               onClick={
                 handleISBN(isbn)
               }
@@ -223,39 +225,45 @@ function ShowBook() {
 	};
 
   function BooksCards(props){
+
 		const isTexted = props.isTexted;
+
 		if (isTexted==="") {
 			    return <FirstData />;  
 			}  
 		return <SecondData />;
-		};
+
+	};
 
   return (
+
     <>
-    <Row className="justify-content-md-center remove-book-title">
-      <Col className="title-page"  md={8} >
-        <h1>RemoveBook</h1>
+      <Row className="justify-content-md-center remove-book-title">
+        <Col className="title-page"  md={8} >
+          <h1>RemoveBook</h1>
+        </Col>
+        <Col  md={4} >
+          <div class="search-bar">
+            <div class="form-group">
+              <span class="fa fa-search form-control-icon"></span>
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Search book by title or isbn..." 
+                value={searchText}
+                onChange={e => handleChange(e.target.value)}/>
+            </div>  
+          </div>
+        </Col>
+      </Row>
+      <Col className="remove-book-column">
+        <Row className="remove-book-row">
+          <BooksCards isTexted={searchText}/>
+        </Row>
       </Col>
-      <Col  md={4} >
-        <div class="search-bar">
-          <div class="form-group">
-            <span class="fa fa-search form-control-icon"></span>
-            <input 
-              type="text" 
-              class="form-control" 
-              placeholder="Search book by title or isbn..." 
-              value={searchText}
-              onChange={e => handleChange(e.target.value)}/>
-          </div>  
-        </div>
-      </Col>
-    </Row>
-    <Col className="remove-book-column">
-    <Row className="remove-book-row">
-      <BooksCards isTexted={searchText}/>
-    </Row>
-    </Col>
-  </>
+    </>
+
   )
+
 }
 export default ShowBook;

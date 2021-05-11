@@ -11,8 +11,12 @@ import './AddBook.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import APIService from '../../../APIService';
 import moment from 'moment';
+import useToken from '../../../utils/useToken';
 
-const AddBook = () => {
+function AddBook(){
+
+  const { token } = useToken();
+  console.log(token)
 
   const [isbn, setisbn] = useState('');
   const [judul_buku, setjudul_buku] = useState('');
@@ -42,7 +46,7 @@ const AddBook = () => {
       return fetch (`http://127.0.0.1:8000/api/input-books/`, {
         'method': 'POST',
         headers: {
-          // 'Authorization': 'Token 915cb9e6ca7f5996fc3a8f1bd9929e3527a38814'
+          'Authorization': `Token ${token}`
         },
         body: formData
       }).then(response => response.json())
@@ -66,6 +70,7 @@ const AddBook = () => {
   };
 
   return(
+
     <Col className="add-book-column">
       <h1>Add book Menu</h1>
       <Card className="form-card">
@@ -237,7 +242,7 @@ const AddBook = () => {
               variant="primary"
               onClick= {()=>{
                 insertBook();
-                // refreshPage();
+                refreshPage();
                 recordingBook();
               }}
             >
@@ -249,7 +254,5 @@ const AddBook = () => {
   )
 
 };
-
-
 
 export default AddBook

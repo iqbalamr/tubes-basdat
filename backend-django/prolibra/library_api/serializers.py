@@ -19,7 +19,7 @@ class LokasiSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lokasi
-        fields = ['no_lokasi','nama_seksi']
+        fields = ('no_lokasi','nama_seksi')
 
 
 class BukuSerializer(serializers.ModelSerializer):
@@ -51,6 +51,7 @@ class InfoMeminjamSerializer(serializers.ModelSerializer):
         model = Meminjam
         fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
     id_peminjam = PeminjamSerializer(many=False)
+    # isbn = BukuSerializer(many=False)
 
 
 class InfoDendaSerializer(serializers.ModelSerializer):

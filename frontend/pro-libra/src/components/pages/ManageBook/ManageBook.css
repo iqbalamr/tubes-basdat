@@ -45,6 +45,14 @@
   display: block !important;
   margin: 0  auto !important;
   align-items: center !important;
+  padding: 60px;
+}
+.container-manage-book .temporary-display .hello-admin-pic {
+  padding: 30px;
+  display: flex;
+  margin: 0 auto !important;
+  width: 50%;
+  height: 50%;
 }
 .container-manage-book .main-body {
   width: 100%;
@@ -58,61 +66,6 @@
   color: #FFFFFF;
   font-weight: 800 ;
   text-align: center !important;
-}
-.container-manage-book .login-col {
-  padding: 60px;
-  align-items: center !important;
-}
-.container-manage-book .login-col .login-card {
-  display: flex;
-  margin: 0 auto !important;
-  padding-top: 60px;
-}
-.container-manage-book .login-col h2 {
-  text-align: center !important;
-  font-size: 2rem;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-.container-manage-book .login-col .login-page {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin-top: 60px;
-}
-.container-manage-book .login-col .form-login-card {
-  width: 100% ;
-}
-.container-manage-book .login-col .form-login-card .login-label {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.container-manage-book .login-col .form-login-card .input-field {
-  height: 50px;
-  background-color: #c4c4c46e;
-  float: right;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  padding-left: 30px;
-}
-.container-manage-book .login-col .form-login-card .login-button {
-  margin-top: 20px;
-  width: 100px;
-  height: 50px !important;
-  float: right;
-  border-radius: 50px;
-  outline: none;
-  font-weight: 700;
-  font-size: 1.5rem;
-  background-color: #613EB0;
-  border: none;
-}
-.container-manage-book .login-col .form-login-card .login-button .login-link {
-  text-decoration: none !important;
-  color: #FFFFFF !important;
 }
 @media (max-width: 760px) {
   .container-manage-book {

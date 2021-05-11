@@ -16,8 +16,7 @@
   margin: 0 auto !important;
   margin-top: 70px !important;
   border-radius: 20px !important;
-  min-width: 320px !important;
-  max-width: 60% !important;
+  width: 100%;
 }
 .add-book-column .form-card h2 {
   font-weight: 700 ;
@@ -38,7 +37,7 @@
   align-items: center !important;
 }
 .add-book-column .form-card .borrow-form .input-column {
-  max-width: 100% !important ;
+  width: 100% !important ;
 }
 .add-book-column .form-card .borrow-form .input-column .input-field {
   height: 50px;
@@ -90,9 +89,10 @@
     margin: 0 auto !important;
     align-items: center !important;
   }
-  .card {
+  .card-body {
     padding: 5px !important;
     align-items: center !important;
+    width: 100%;
   }
   .container {
     padding: 0;
@@ -108,5 +108,8 @@
     padding: 0px 0px 0px 0px;
     display: flex !important;
     margin: 0 auto !important;
+  }
+  .form-card {
+    max-width: 100% !important;
   }
 }
