@@ -1,6 +1,7 @@
 .borrower-column {
   background-color: #FFFFFF !important;
   width: 100%;
+  min-height: 1920px;
   height: 100%;
   padding: 60px;
 }

@@ -1,26 +1,27 @@
-.container {
+.container-borrow {
   max-width: 100%;
   margin-right: 10px;
   margin-left: auto;
   background-color: #0E0D27 !important;
-  height: 1920px;
-  padding: 60px 0px 0px 60px ;
+  min-height: 1920px !important;
+  height: 100% !important;
+  padding: 0px !important;
 }
-.container .leftbar-column {
+.container-borrow .leftbar-column {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.container .leftbar-column .left-bar-menus {
+.container-borrow .leftbar-column .left-bar-menus {
   background-color: #0E0D27;
   height: 100% !important;
   padding: 25px 0px 0px 0px !important;
   border-right: 5px solid #613EB0;
 }
-.container .leftbar-column .left-bar-menus ul {
+.container-borrow .leftbar-column .left-bar-menus ul {
   padding: 0;
   margin: 0;
 }
-.container .leftbar-column .left-bar-menus .left-bar-menu {
+.container-borrow .leftbar-column .left-bar-menus .left-bar-menu {
   height: 80px;
   width: 100%;
   align-items: center;
@@ -29,20 +30,21 @@
   text-align: center;
   border-bottom: 5px solid #613EB0;
 }
-.container .leftbar-column .left-bar-menus .left-bar-menu .link-menu {
+.container-borrow .leftbar-column .left-bar-menus .left-bar-menu .link-menu {
   text-decoration: none !important;
 }
-.container .leftbar-column .left-bar-menus .left-bar-menu .link-menu h2 {
+.container-borrow .leftbar-column .left-bar-menus .left-bar-menu .link-menu h2 {
   color: #FFFFFF;
   font-weight: 700;
   padding-left: 40px;
 }
-.container .leftbar-column .left-bar-menus .left-bar-menu:hover {
+.container-borrow .leftbar-column .left-bar-menus .left-bar-menu:hover {
   background-color: #613EB0;
   text-decoration: none !important;
 }
 .borrow-form-column {
-  padding-top: 60px;
+  display: flex !important;
+  align-items: center;
 }
 .borrow-form-column h1 {
   text-align: left !important;
@@ -53,6 +55,9 @@
   display: block !important;
   margin: 0  auto !important;
   align-items: center !important;
+  min-height: 1920px;
+  height: 100%;
+  padding-top: 60px;
 }
 .main-display .borrow-img {
   display: flex !important;
@@ -60,7 +65,7 @@
   width: 50% !important;
   height: 50% !important;
   margin: 0 auto !important;
-  padding-top: 30px;
+  padding-top: 30px ;
 }
 @media (max-width: 760px) {
   .container {

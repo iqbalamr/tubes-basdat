@@ -38,30 +38,64 @@
     padding: 30px !important;
     display: block !important;
     .member-img{
-      width: 137px !important;
-      height: 200px !important;
+      width: 137px ;
+      height: 200px ;
       border-radius: 15px!important;
       float: none;
     }
     .member-detail{
       display: block;
       padding: 0px 0px 0px 20px !important;
-      width: 75% !important;
-      
+      width: 75% !important;    
     } 
   }
-  h4{
-    font-size: 2rem !important;
-    font-weight: 700 !important;
+
+  .desc-member{
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
     line-height: 2.5rem !important;
-  }
+    padding-top: 30px;
+    h4{
+      font-size: 1.5rem !important;
+      font-weight: 600 !important;
+      line-height: 2.5rem !important;
+    }
+  }  
+ 
   img{
     border-radius: 15px !important;
   }
-  .desc-member{
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    line-height: 2.5rem !important;
-    padding-top: 30px;
+
+}
+
+@media (max-width: 480px) {
+  .team-list{
+    .member-cards{
+      padding: 20px !important;
+      display: block !important;
+      .member-img{
+        width: 100px ;
+        height: 167px ;
+        border-radius: 15px!important;
+        float: none;
+      }
+      .member-detail{
+        display: block;
+        padding: 0px 0px 0px 20px !important;
+        width: 75% !important;
+      }      
+    }
+    .desc-member{
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      line-height: 1.5rem !important;
+      padding-top: 30px;
+      h4{
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        line-height: 1.5rem !important;
+      }
+    }   
   }
 }
+

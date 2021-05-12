@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap';
 import moment from 'moment';
 import APIService from '../../../APIService';  
+import './ReturnForm.css'
 
 function ReturnForm(){
 
@@ -35,22 +36,20 @@ function ReturnForm(){
   })();
 
   function tgl_peminjaman(data){
+
     setData= data;
+  
   }
 
-  function finesCount () {
+  function finesCount(){
     
     setTimeout(()=>{
+
       var dateBorrow=moment(setData.tanggal_peminjaman);
       var dateReturn=moment(tanggal_pengembalian);
       var totalDay= dateReturn.diff(dateBorrow, 'days');
       var jumlah_denda = 0;
       var jumlah_hari_telat = 0;
-
-      // console.log(dateBorrow)
-      // console.log(setData.tanggal_peminjaman);
-      // console.log(tanggal_pengembalian)
-      // console.log(totalDay);
 
       if (totalDay>Number(7)){
         jumlah_denda = (totalDay - 7) * 1000;
@@ -58,36 +57,42 @@ function ReturnForm(){
         setTimeout(() => {APIService.Fines({id_peminjam, jumlah_denda, jumlah_hari_telat})
         .then(response => console.log(response))},500);
       }
-      // console.log(jumlah_denda)
-      // console.log(jumlah_hari_telat)
     },1000)
+
   };
 
   function insertServices () {
+
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},1000);
+    .then(response => console.log(response))},1000)
+
   };
 
   function returnBook () {
+
     APIService.ReturnBook(id_peminjam, isbn, {status_peminjaman, tanggal_pengembalian})
     .then(response => console.log(response))
+
   };
 
    function refreshPage() {
+
     setTimeout(() => {
       window.location.reload(false)
-    },3000 );
+    },3000 )
+
   };
 
   return (
-    <>
+
+    <Col className="return-form-col">
       <h1>Kindly Return The Book Please</h1>
       <Card className="form-card">
           <Card.Body>
           <Card.Title >
             <h2>Return Form</h2>
           </Card.Title>
-          <div className="borrow-form">
+          <div className="return-form">
           <Form.Group>
               
               <Form.Row>
@@ -154,8 +159,10 @@ function ReturnForm(){
           </Button>
           </Card.Body>
         </Card>
-    </>
-  )
-}
+    </Col>
+
+  );
+
+};
 
 export default ReturnForm;

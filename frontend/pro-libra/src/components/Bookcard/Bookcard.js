@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Booklists(props){
   
   return(
+
     <Card className="book-cards">
       <div>
         <div className="book-img">
@@ -63,6 +64,7 @@ function Booklists(props){
           </Card.Body>
       </div>
     </Card>
+    
   );
 
 };

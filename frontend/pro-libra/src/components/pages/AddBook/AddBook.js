@@ -251,7 +251,8 @@ function AddBook(){
           </Card.Body>
         </Card>
     </Col>
-  )
+  
+  );
 
 };
 
