@@ -8,8 +8,10 @@ import {
 import './OurTeam.css';
 import OurTeamList from './OurTeam.json';
 
-function OurTeam() {
+function OurTeam(){
+
   return (
+
     <Container className="our-team-page">
       <Row>
         <Col md={12} xs={12}>
@@ -62,7 +64,9 @@ function OurTeam() {
         </Col>
       </Row>
     </Container>
-  )
-}
+
+  );
+
+};
 
 export default OurTeam;

@@ -3,7 +3,8 @@
   padding: 60px !important;
   align-items: center !important;
   background-color: #0E0D27;
-  height: 1920px;
+  // min-height: 1920px;
+  height: 100%;
   .leftbar-add-column{
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -18,7 +19,7 @@
         margin: 0;
       }
       .leftbar-add-menu{
-        height: 80px;
+        height: 80px !important;
         width: 100%;
         align-items: center;
         margin: 0 auto;
@@ -35,6 +36,7 @@
         }
       }
       .leftbar-add-menu:hover{
+        height: 80px !important;
         background-color: #613EB0;
         text-decoration: none !important;
       }
@@ -45,6 +47,8 @@
     margin: 0  auto !important;
     align-items: center !important;
     padding: 60px;
+    height: 100%;
+    min-height: 1920px;
     .hello-admin-pic{
       padding: 30px;
       display: flex;
@@ -78,6 +82,12 @@
         padding: 0px 0px 0px 0px !important;
         border:none !important;
       }
-
+  }
+  .temporary-display{
+    height: 100% !important;
+    .hello-admin-pic{
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 }

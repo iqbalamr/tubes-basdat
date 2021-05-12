@@ -4,27 +4,29 @@ import './Footer.css';
 function Footer () {
 
 	return(
-		<div className="title">
+
+		<div className="footer">
       <h2> Our Teams </h2> 
 			<div className="info">
-				<ul>Eliza
+				<div>Eliza
 					<li>119140002</li>
-				</ul>
-				<ul>
+				</div>
+				<div>
 					Della
 					<li>119140071</li>
-				</ul>
-				<ul>Dhifaf
+				</div>
+				<div>Dhifaf
 					<li>119140047</li>
-				</ul>
-				<ul>Faras
+				</div>
+				<div>Faras
 					<li>119140052</li>
-				</ul>
-				<ul>Iqbal
+				</div>
+				<div>Iqbal
 					<li>119140161</li>
-				</ul>
+				</div>
 			</div>
     </div>
+		
 	);
 	
 }

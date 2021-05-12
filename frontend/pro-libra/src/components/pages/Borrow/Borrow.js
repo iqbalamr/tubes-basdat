@@ -15,7 +15,7 @@ function Borrow() {
 
   return (
 
-    <Container>
+    <Container className="container-borrow">
       <Row className="borrow-body"> 
         <Col md={3} xs={12} className="leftbar-column" >
           <div className="left-bar-menus">
@@ -51,8 +51,9 @@ function Borrow() {
         </Col>
       </Row>
     </Container>
-  )
   
-}
+  );
+  
+};
 
 export default Borrow;

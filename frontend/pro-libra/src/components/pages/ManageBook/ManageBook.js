@@ -12,7 +12,8 @@ import LibraryFines from '../LibraryFines/LibraryFines';
 import RemoveBook from '../RemoveBook/RemoveBook';
 import useToken from '../../../utils/useToken';
 import Picture from '/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/helloadmin.svg'
-function ManageBook() {
+
+function ManageBook(){
  
   // to get the token
   const { token } = useToken();
@@ -66,7 +67,7 @@ function ManageBook() {
       </Row>
     </Container>
 
-  )
+  );
 
 };
 

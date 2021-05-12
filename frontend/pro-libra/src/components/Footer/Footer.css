@@ -1,24 +1,47 @@
-.title {
+.footer {
   position: relative;
   display: block;
-  background-color: #613EB0;
+  background-color: #613EB0 !important;
   color: #FFFFFF;
+  width: 100%;
+  padding: 20px;
 }
-.title .info {
+.footer .info {
   font-size: 1rem !important;
   display: grid;
   grid-template-columns: repeat(5, auto) !important;
   text-align: center !important;
+  width: 100% !important;
 }
-.title .info ul {
+.footer .info ul {
   font-weight: bold;
   padding: 0px 20px 0px 20px !important;
 }
-.title .info ul li {
+.footer .info ul li {
   font-weight: normal;
 }
-.title h2 {
+.footer h2 {
   text-align: center;
   font-size: 2rem !important;
   padding: 20px 20px 20px 20px;
+}
+@media (max-width: 480px) {
+  .footer {
+    position: relative;
+    display: inline-block;
+    background-color: #613EB0;
+    color: #FFFFFF;
+    width: 100%;
+  }
+  .footer .info {
+    font-size: 1rem !important;
+    display: grid;
+    grid-template-columns: repeat(5, auto) !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .footer .info li {
+    padding: 5px !important;
+    font-size: 0.7rem !important;
+  }
 }

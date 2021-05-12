@@ -49,15 +49,16 @@ function BorrowForm(){
   };
     
   return( 
-    <>
+
+    <Col className="borrow-form-col">
       <h1>Read At Home, Just Borrow It</h1>
       <Card className="form-card">
-          <Card.Body>
+        <Card.Body>
           <Card.Title >
             <h2>Borrow Form</h2>
           </Card.Title>
           <div className="borrow-form">
-          <Form.Group>
+            <Form.Group>
               <Form.Row>
                 <Form.Label 
                   column lg={2} 
@@ -271,10 +272,12 @@ function BorrowForm(){
           >
             Submit
           </Button>
-          </Card.Body>
-        </Card>
-        </>       
+        </Card.Body>
+      </Card>
+    </Col> 
+
   );
+
 };
 
 export default BorrowForm;

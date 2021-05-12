@@ -25,30 +25,33 @@ function App(){
   }
   
   return (
+
     <>
-    <Router basename="/">
-      <Navbar/>
-      <CookiesProvider>
-      <Switch >
-        <Route path="/showbook">
-          <ShowBook/>
-        </Route>
-        <Route path="/borrow">
-          <Borrow/>
-        </Route>
-        <Route path="/manage-book">
-          <CheckIfAuth/>
-        </Route>
-        <Route path="/our-team">
-          <OurTeam/>
-        </Route>
-        <Home/>
-      </Switch>
-      </CookiesProvider>
-    </Router>  
-    <Footer/>
+      <Router basename="/">
+        <Navbar/>
+        <CookiesProvider>
+        <Switch >
+          <Route path="/showbook">
+            <ShowBook/>
+          </Route>
+          <Route path="/borrow">
+            <Borrow/>
+          </Route>
+          <Route path="/manage-book">
+            <CheckIfAuth/>
+          </Route>
+          <Route path="/our-team">
+            <OurTeam/>
+          </Route>
+          <Home/>
+        </Switch>
+        </CookiesProvider>
+      </Router>  
+      <Footer/>
     </>
+  
   );
+
 };
 
 export default App;
