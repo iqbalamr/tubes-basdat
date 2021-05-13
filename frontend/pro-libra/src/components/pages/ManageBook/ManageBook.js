@@ -12,12 +12,13 @@ import LibraryFines from '../LibraryFines/LibraryFines';
 import RemoveBook from '../RemoveBook/RemoveBook';
 import useToken from '../../../utils/useToken';
 import Picture from '/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/helloadmin.svg'
+import Diagram from '../Diagram/Diagram';
 
 function ManageBook(){
  
   // to get the token
   const { token } = useToken();
-  console.log(token)
+  // console.log(token)
 
   return (
 
@@ -48,6 +49,11 @@ function ManageBook(){
                   <h2>Library Fines</h2>
                 </Link>              
             </div>
+            <div className="leftbar-add-menu" >             
+                <Link to="/manage-book/diagram" className="link-menu">
+                  <h2>Diagram</h2>
+                </Link>              
+            </div>
           </ul>
         </div>  
         </Col>
@@ -57,6 +63,7 @@ function ManageBook(){
             <Route path="/manage-book/remove-book" component={RemoveBook}/>
             <Route path="/manage-book/borrower-list" component={BorrowerList}/>
             <Route path="/manage-book/library-fines" component={LibraryFines}/>
+            <Route path="/manage-book/diagram" component={Diagram}/>
             <div className="temporary-display">
               <h1>Welcome Home Admin! Hope You Have a Great Day</h1>
               <br/>

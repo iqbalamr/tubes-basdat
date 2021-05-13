@@ -1,0 +1,16 @@
+.bar {
+  width: 70px !important;
+}
+.diagram {
+  padding: 60px !important;
+}
+.diagram .background {
+  background-color: aliceblue;
+  padding: 10px;
+}
+.diagram h3 {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
