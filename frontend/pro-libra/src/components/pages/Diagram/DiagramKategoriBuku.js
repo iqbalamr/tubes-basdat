@@ -1,15 +1,14 @@
 import React,{useState, useEffect} from 'react';
 import './Diagram.css';
-import {Bar} from "react-chartjs-2";
+import {Doughnut} from "react-chartjs-2";
 
-
-function DiagramLogPengunjung() {
+function DiagramKategoriBuku() {
 
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/services/', {
+		fetch('http://127.0.0.1:8000/api/books/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -22,7 +21,7 @@ function DiagramLogPengunjung() {
 	}, [])
 
   var occurences = rows.reduce(function (r, row) {
-    r[row.jenis] = ++r[row.jenis] || 1;
+    r[row.kategori] = ++r[row.kategori] || 1;
     return r;
   }, {});
 
@@ -43,15 +42,23 @@ function DiagramLogPengunjung() {
     labels: labels,
     datasets: [
       {
-        label: 'Log Kegiatan Pengunjung',
+        label: 'Status Kepeminjaman Buku',
         data: dataset,
         backgroundColor: [
+          '#cdb4db',
           '#fcbf49',
-          '#ef233c',
+          '#f72585',
+          '#7209b7',
+          '#3f37c9',
+          '#4895ef',
         ],
         borderColor: [
+          '#cdb4db',
           '#fcbf49',
-          '#ef233c',
+          '#f72585',
+          '#7209b7',
+          '#3f37c9',
+          '#4895ef',
         ],
         borderWidth: 1,
       },
@@ -72,18 +79,18 @@ function DiagramLogPengunjung() {
 
   return (
     <>
-    <h3>Log Kegiatan Pengunjung</h3>
-    <div className="diagram-area">
-      <Bar
+       <h3>Banyak Buku per Kategori</h3>
+       <div className="diagram-area">
+       <Doughnut
           className="background"
           data={data}
           height={10}
-          width={35}
+          width={10}
           options={options}
         />
-    </div>
+       </div>
     </>
   )
 }
 
-export default DiagramLogPengunjung
+export default DiagramKategoriBuku

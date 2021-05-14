@@ -136,7 +136,7 @@ function ReturnForm(){
                   <Form.Control 
                     size="lg" 
                     type="text" 
-                    placeholder="Your address..." 
+                    placeholder="Admin id ..." 
                     className="input-field"
                     onChange={(e) => setid_petugas(e.target.value)}
                   />
