@@ -70,7 +70,6 @@ class Denda(models.Model):
     def __str__(self):
         return self.id_peminjam
 
-
 class Pendataan(models.Model):
     id_petugas = models.ForeignKey(User, on_delete=models.CASCADE)
     isbn = models.ForeignKey(Buku, on_delete=models.CASCADE)
