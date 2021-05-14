@@ -29,7 +29,7 @@ function DiagramPeminjam() {
       return { key: key, value: occurences[key] };
   });
 
-  console.log(result);
+  // console.log(result);
 
   var labels = result.map(function(e) {
     return e.key;

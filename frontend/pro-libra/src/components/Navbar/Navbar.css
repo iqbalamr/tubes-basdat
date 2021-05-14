@@ -55,8 +55,8 @@
 .navbar-light .navbar-toggler-icon {
   background-color: #ffff;
   background-image: none !important;
-  -webkit-mask-image: url(/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/sliders-h-solid.svg) !important;
-  mask-image: url(/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/sliders-h-solid.svg);
+  -webkit-mask-image: url(/src/assets/Images/sliders-h-solid.svg) !important;
+  mask-image: url(/src/assets/Images/sliders-h-solid.svg);
 }
 .navbar-collapse {
   max-height: 340px;

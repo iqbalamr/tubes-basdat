@@ -16,7 +16,7 @@ import useToken from '../../../utils/useToken';
 function AddBook(){
 
   const { token } = useToken();
-  console.log(token)
+  // console.log(token)
 
   const [isbn, setisbn] = useState('');
   const [judul_buku, setjudul_buku] = useState('');

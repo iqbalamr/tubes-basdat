@@ -9,7 +9,7 @@ import './Borrow.css';
 import '../BorrowCard/BorrowForm.css';
 import BorrowForm from '../BorrowCard/BorrowForm';
 import ReturnForm from '../ReturnCard/ReturnForm';
-import BorrowImage from '/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/borrow-assets.svg';
+import BorrowImage from '../../../assets/Images/borrow-assets.svg';
 
 function Borrow() {
 

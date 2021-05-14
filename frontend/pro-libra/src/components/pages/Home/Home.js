@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css';
-import ImageWellcome from '/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/wellcome.svg';
+import ImageWellcome from '../../../assets/Images/wellcome.svg';
 
 const Home = () =>{
   

@@ -11,13 +11,13 @@ import BorrowerList from '../BorrowerList/BorrowerList';
 import LibraryFines from '../LibraryFines/LibraryFines';
 import RemoveBook from '../RemoveBook/RemoveBook';
 import useToken from '../../../utils/useToken';
-import Picture from '/home/dhifaf/Documents/tubes-basdat/frontend/pro-libra/src/assets/Images/helloadmin.svg'
+import Picture from '../../../assets/Images/helloadmin.svg';
 import Diagram from '../Diagram/Diagram';
 
 function ManageBook(){
  
   // to get the token
-  const { token } = useToken();
+  // const { token } = useToken();
   // console.log(token)
 
   return (

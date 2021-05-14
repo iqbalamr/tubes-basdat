@@ -70,6 +70,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
+    'https://pro-libra.herokuapp.com',
 )
 
 ROOT_URLCONF = 'prolibra.urls'
