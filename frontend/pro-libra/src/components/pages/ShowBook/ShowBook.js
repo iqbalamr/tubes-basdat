@@ -15,7 +15,7 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/books', {
+		fetch('https://f7505cc43e45.ngrok.io/api/books', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function ShowBook(){
 			{data.map((book) => {
 				return (
 					<BoookCard 
-					pictures= {'http://127.0.0.1:8000' + book.gambar}
+					pictures= {'https://f7505cc43e45.ngrok.io' + book.gambar}
 					title= {book.judul_buku}
 					isbn= {book.isbn}
 					writer= {book.penulis}
@@ -87,7 +87,7 @@ function ShowBook(){
 				return (
 
 					<BoookCard 
-						pictures= {'http://127.0.0.1:8000' + book.gambar}
+						pictures= {'https://f7505cc43e45.ngrok.io' + book.gambar}
 						title= {book.judul_buku}
 						isbn= {book.isbn}
 						writer= {book.penulis}

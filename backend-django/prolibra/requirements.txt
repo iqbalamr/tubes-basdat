@@ -12,6 +12,7 @@ logilab-common==1.8.1
 mccabe==0.6.1
 mypy-extensions==0.4.3
 Pillow==8.2.0
+psycopg2-binary==2.8.6
 Pygments==2.8.1
 pylint==2.8.2
 pylint-django==2.4.4

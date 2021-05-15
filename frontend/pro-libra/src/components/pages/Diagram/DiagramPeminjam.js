@@ -8,7 +8,7 @@ function DiagramPeminjam() {
 
   useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/borrow/', {
+		fetch('https://f7505cc43e45.ngrok.io/api/borrow/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

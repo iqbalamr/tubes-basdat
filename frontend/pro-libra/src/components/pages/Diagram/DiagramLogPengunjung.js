@@ -9,7 +9,7 @@ function DiagramLogPengunjung() {
 
   useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/services/', {
+		fetch('https://f7505cc43e45.ngrok.io/api/services/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

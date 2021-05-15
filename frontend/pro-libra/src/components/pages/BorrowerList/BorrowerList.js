@@ -11,7 +11,7 @@ function BorrowerList(){
 
 	useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/borrow-info/', {
+		fetch('https://f7505cc43e45.ngrok.io/api/borrow-info/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

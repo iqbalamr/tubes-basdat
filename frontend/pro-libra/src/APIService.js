@@ -4,7 +4,7 @@ export default class APIService {
 
   static InsertBorrowerForm(body) {
 
-    return fetch (`http://127.0.0.1:8000/api/borrowers/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/borrowers/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export default class APIService {
 
   static InsertBorrowForm(body) {
 
-    return fetch (`http://127.0.0.1:8000/api/borrow/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/borrow/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export default class APIService {
 
   static InputServices(body) {
 
-    return fetch (`http://127.0.0.1:8000/api/services/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/services/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default class APIService {
 
   static ReturnBook(id_peminjam,isbn,body) {
 
-    return fetch (`http://127.0.0.1:8000/api/return/${id_peminjam}-${isbn}/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/return/${id_peminjam}-${isbn}/`, {
       'method': 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export default class APIService {
 
   static Fines(body) {
 
-    return fetch (`http://127.0.0.1:8000/api/fines/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/fines/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export default class APIService {
 
   static DeleteBook(isbn,token) {
 
-    return fetch (`http://127.0.0.1:8000/api/books/${isbn}/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/books/${isbn}/`, {
       'method': 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export default class APIService {
 
   static RecordingBook(body) {
 
-    return fetch (`http://127.0.0.1:8000/api/recording-book/`, {
+    return fetch (`https://f7505cc43e45.ngrok.io/api/recording-book/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',

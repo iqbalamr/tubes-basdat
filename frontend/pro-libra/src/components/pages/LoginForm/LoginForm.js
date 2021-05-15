@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
 
-  return fetch (`http://127.0.0.1:8000/auth/`, {
+  return fetch (`https://f7505cc43e45.ngrok.io/auth/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',

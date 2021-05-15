@@ -11,7 +11,7 @@ function LibraryFines(){
 
 	useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/fines-list/', {
+		fetch('https://f7505cc43e45.ngrok.io/api/fines-list/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

@@ -26,9 +26,14 @@ SECRET_KEY = 'django-insecure-+#1nonj5)by8td+@=(9*@*yjhedz4w7mbl(idvaw$od@9rt#u%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'prolibraapi.herokuapp.com',
+    'https://prolibraapi.herokuapp.com',
+    '127.0.0.1',
+    'f7505cc43e45.ngrok.io',
+]
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Application definition

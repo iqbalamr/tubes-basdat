@@ -8,7 +8,7 @@ function DiagramKategoriBuku() {
 
   useEffect(() => {
 
-		fetch('http://127.0.0.1:8000/api/books/', {
+		fetch('https://f7505cc43e45.ngrok.io/api/books/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
