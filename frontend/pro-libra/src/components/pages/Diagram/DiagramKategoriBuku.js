@@ -8,7 +8,7 @@ function DiagramKategoriBuku() {
 
   useEffect(() => {
 
-		fetch('https://f7505cc43e45.ngrok.io/api/books/', {
+		fetch('https://prolibraapi.loca.lt/api/books/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -51,6 +51,18 @@ function DiagramKategoriBuku() {
           '#7209b7',
           '#3f37c9',
           '#4895ef',
+          '#FFB5A7',
+          '#FEC89A',
+          '#F9DCC4',
+          '#FEEAFA',
+          '#E9F5DB',
+          '#adb5bd',
+          '#87986a',
+          '#b5c99a',
+          '#ba181b',
+          '#84a59d',
+          '#003566',
+
         ],
         borderColor: [
           '#cdb4db',
@@ -59,6 +71,17 @@ function DiagramKategoriBuku() {
           '#7209b7',
           '#3f37c9',
           '#4895ef',
+          '#FFB5A7',
+          '#FEC89A',
+          '#F9DCC4',
+          '#FEEAFA',
+          '#E9F5DB',
+          '#adb5bd',
+          '#87986a',
+          '#b5c99a',
+          '#ba181b',
+          '#84a59d',
+          '#003566',
         ],
         borderWidth: 1,
       },

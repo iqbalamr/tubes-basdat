@@ -11,7 +11,7 @@ function BorrowerList(){
 
 	useEffect(() => {
 
-		fetch('https://f7505cc43e45.ngrok.io/api/borrow-info/', {
+		fetch('https://prolibraapi.loca.lt/api/borrow-info/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

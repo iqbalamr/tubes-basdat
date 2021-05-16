@@ -24,7 +24,7 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('https://f7505cc43e45.ngrok.io/api/books', {
+		fetch('https://prolibraapi.loca.lt/api/books', {
 			'method': 'GET',
       headers: {
 				'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function ShowBook(){
 
     setisbn(isbn);
     setTimeout(() => {deleteBook(isbn,token)},500);
-    setTimeout(() => {refreshPage()},1000);
+    setTimeout(() => {refreshPage()},10000);
 
   };
 
@@ -96,7 +96,7 @@ function ShowBook(){
 
             <Card className="book-cards">
               <div className="book-img">
-                <Card.Img className="book-picture" src={'https://f7505cc43e45.ngrok.io' + gambar}/>
+                <Card.Img className="book-picture" src={'https://prolibraapi.loca.lt' + gambar}/>
               </div>
               <Card.Body className="book-detail">
                 <Card.Title>
@@ -177,7 +177,7 @@ function ShowBook(){
 
 					<Card className="book-cards">
             <div className="book-img">
-              <Card.Img className="book-picture" src={'https://f7505cc43e45.ngrok.io' + gambar}/>
+              <Card.Img className="book-picture" src={'https://prolibraapi.loca.lt' + gambar}/>
             </div>
             <Card.Body className="book-detail">
               <Card.Title>
@@ -265,7 +265,7 @@ function ShowBook(){
     <>
       <Row className="justify-content-md-center remove-book-title">
         <Col className="title-page"  md={8} >
-          <h1>RemoveBook</h1>
+          <h1>Remove Book</h1>
         </Col>
         <Col  md={4} >
           <div class="search-bar">

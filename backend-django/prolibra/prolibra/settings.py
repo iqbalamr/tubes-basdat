@@ -26,12 +26,10 @@ SECRET_KEY = 'django-insecure-+#1nonj5)by8td+@=(9*@*yjhedz4w7mbl(idvaw$od@9rt#u%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'prolibraapi.herokuapp.com',
-    'https://prolibraapi.herokuapp.com',
-    '127.0.0.1',
-    'f7505cc43e45.ngrok.io',
-]
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -72,11 +70,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-    'https://pro-libra.herokuapp.com',
-)
 
 ROOT_URLCONF = 'prolibra.urls'
 

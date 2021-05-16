@@ -34,18 +34,18 @@ function BorrowForm(){
 
   function insertBorrowForm () {
     setTimeout(() => {APIService.InsertBorrowForm({id_peminjam,isbn, tanggal_peminjaman})
-    .then(response => console.log(response))},300);
+    .then(response => console.log(response))},1000);
   };
 
   function insertServices () {
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},500);
+    .then(response => console.log(response))},2000);
   };
 
   function refreshPage() {
     setTimeout(() => {
       window.location.reload(false)
-    },1000 );
+    },10000 );
   };
     
   return( 

@@ -11,7 +11,7 @@ function LibraryFines(){
 
 	useEffect(() => {
 
-		fetch('https://f7505cc43e45.ngrok.io/api/fines-list/', {
+		fetch('https://prolibraapi.loca.lt/api/fines-list/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

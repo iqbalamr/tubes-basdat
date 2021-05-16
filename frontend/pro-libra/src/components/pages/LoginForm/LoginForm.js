@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
 
-  return fetch (`https://f7505cc43e45.ngrok.io/auth/`, {
+  return fetch (`https://prolibraapi.loca.lt/auth/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',

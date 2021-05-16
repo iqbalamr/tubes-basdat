@@ -15,7 +15,7 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('https://f7505cc43e45.ngrok.io/api/books', {
+		fetch('https://prolibraapi.loca.lt/api/books', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function ShowBook(){
 			{data.map((book) => {
 				return (
 					<BoookCard 
-					pictures= {'https://f7505cc43e45.ngrok.io' + book.gambar}
+					pictures= {'https://prolibraapi.loca.lt' + book.gambar}
 					title= {book.judul_buku}
 					isbn= {book.isbn}
 					writer= {book.penulis}
@@ -87,7 +87,7 @@ function ShowBook(){
 				return (
 
 					<BoookCard 
-						pictures= {'https://f7505cc43e45.ngrok.io' + book.gambar}
+						pictures= {'https://prolibraapi.loca.lt' + book.gambar}
 						title= {book.judul_buku}
 						isbn= {book.isbn}
 						writer= {book.penulis}

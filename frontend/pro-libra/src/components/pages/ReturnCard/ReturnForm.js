@@ -23,7 +23,7 @@ function ReturnForm(){
   
   const request = (async ()=> {
     
-    const response = await fetch(`https://f7505cc43e45.ngrok.io/api/return/${id_peminjam}-${isbn}/`, {
+    const response = await fetch(`https://prolibraapi.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function ReturnForm(){
   function insertServices () {
 
     setTimeout(() => {APIService.InputServices({tanggal_urusan, id_peminjam, id_petugas, jenis})
-    .then(response => console.log(response))},1000)
+    .then(response => console.log(response))},3000)
 
   };
 
@@ -79,7 +79,7 @@ function ReturnForm(){
 
     setTimeout(() => {
       window.location.reload(false)
-    },3000 )
+    },10000 )
 
   };
 

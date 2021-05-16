@@ -43,7 +43,7 @@ function AddBook(){
 
   function insertBook(){
 
-      return fetch (`https://f7505cc43e45.ngrok.io/api/input-books/`, {
+      return fetch (`https://prolibraapi.loca.lt/api/input-books/`, {
         'method': 'POST',
         headers: {
           'Authorization': `Token ${token}`
@@ -57,7 +57,7 @@ function AddBook(){
   function recordingBook(){
 
     setTimeout(() => {APIService.RecordingBook({id_petugas, isbn,tanggal_pendataan})
-    .then(response => console.log(response))},1000);
+    .then(response => console.log(response))},5000);
 
   };
 
@@ -65,7 +65,7 @@ function AddBook(){
 
     setTimeout(() => {
       window.location.reload(false)
-    },3000 );
+    },11000 );
   
   };
 
