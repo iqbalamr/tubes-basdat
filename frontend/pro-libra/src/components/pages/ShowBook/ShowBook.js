@@ -19,6 +19,7 @@ function ShowBook(){
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
+				'Bypass-Tunnel-Reminder': 'true',
 			}
 		})
 		.then((response)=> response.json())

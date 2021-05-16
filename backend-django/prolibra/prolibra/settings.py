@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-+#1nonj5)by8td+@=(9*@*yjhedz4w7mbl(idvaw$od@9rt#u%
 DEBUG = True
 
 ALLOWED_HOSTS=['*']
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOWED_ORIGINS = [
+    "https://pro-libra.herokuapp.com",
+]
+
 
 
 
