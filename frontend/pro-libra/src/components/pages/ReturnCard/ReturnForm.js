@@ -23,7 +23,7 @@ function ReturnForm(){
   
   const request = (async ()=> {
     
-    const response = await fetch(`https://prolibraapi.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
+    const response = await fetch(`https://prolibra-api.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

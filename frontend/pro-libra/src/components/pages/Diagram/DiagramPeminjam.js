@@ -8,7 +8,7 @@ function DiagramPeminjam() {
 
   useEffect(() => {
 
-		fetch('https://prolibraapi.loca.lt/api/borrow/', {
+		fetch('https://prolibra-api.loca.lt/api/borrow/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

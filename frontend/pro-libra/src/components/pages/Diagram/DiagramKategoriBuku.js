@@ -8,7 +8,7 @@ function DiagramKategoriBuku() {
 
   useEffect(() => {
 
-		fetch('https://prolibraapi.loca.lt/api/books/', {
+		fetch('https://prolibra-api.loca.lt/api/books/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

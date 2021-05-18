@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
 
-  return fetch (`https://prolibraapi.loca.lt/auth/`, {
+  return fetch (`https://prolibra-api.loca.lt/auth/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',

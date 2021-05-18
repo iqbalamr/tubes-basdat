@@ -15,11 +15,10 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('https://prolibraapi.loca.lt/api/books', {
+		fetch('https://prolibra-api.loca.lt/api/books', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Bypass-Tunnel-Reminder': 'true',
 			}
 		})
 		.then((response)=> response.json())
@@ -62,7 +61,7 @@ function ShowBook(){
 			{data.map((book) => {
 				return (
 					<BoookCard 
-					pictures= {'https://prolibraapi.loca.lt' + book.gambar}
+					pictures= {'https://prolibra-api.loca.lt' + book.gambar}
 					title= {book.judul_buku}
 					isbn= {book.isbn}
 					writer= {book.penulis}
@@ -88,7 +87,7 @@ function ShowBook(){
 				return (
 
 					<BoookCard 
-						pictures= {'https://prolibraapi.loca.lt' + book.gambar}
+						pictures= {'https://prolibra-api.loca.lt' + book.gambar}
 						title= {book.judul_buku}
 						isbn= {book.isbn}
 						writer= {book.penulis}

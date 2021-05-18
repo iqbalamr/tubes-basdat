@@ -40,7 +40,7 @@ class BookList(APIView):
 
 class InputBookList(APIView):
 
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
     def get(self, request):
         books = Buku.objects.all()
@@ -57,7 +57,7 @@ class InputBookList(APIView):
 
 class BookDetail(APIView):
 
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     # authentication_classes = (TokenAuthentication)
 
     def get_object(self, isbn):

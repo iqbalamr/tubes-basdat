@@ -4,7 +4,7 @@ export default class APIService {
 
   static InsertBorrowerForm(body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/borrowers/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/borrowers/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export default class APIService {
 
   static InsertBorrowForm(body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/borrow/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/borrow/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export default class APIService {
 
   static InputServices(body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/services/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/services/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default class APIService {
 
   static ReturnBook(id_peminjam,isbn,body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
       'method': 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export default class APIService {
 
   static Fines(body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/fines/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/fines/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export default class APIService {
 
   static DeleteBook(isbn,token) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/books/${isbn}/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/books/${isbn}/`, {
       'method': 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ export default class APIService {
 
   static RecordingBook(body) {
 
-    return fetch (`https://prolibraapi.loca.lt/api/recording-book/`, {
+    return fetch (`https://prolibra-api.loca.lt/api/recording-book/`, {
       'method': 'POST',
 			headers: {
 				'Content-Type': 'application/json',

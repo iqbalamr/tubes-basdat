@@ -24,7 +24,7 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('https://prolibraapi.loca.lt/api/books', {
+		fetch('https://prolibra-api.loca.lt/api/books', {
 			'method': 'GET',
       headers: {
 				'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ function ShowBook(){
 
             <Card className="book-cards">
               <div className="book-img">
-                <Card.Img className="book-picture" src={'https://prolibraapi.loca.lt' + gambar}/>
+                <Card.Img className="book-picture" src={'https://prolibra-api.loca.lt' + gambar}/>
               </div>
               <Card.Body className="book-detail">
                 <Card.Title>
@@ -177,7 +177,7 @@ function ShowBook(){
 
 					<Card className="book-cards">
             <div className="book-img">
-              <Card.Img className="book-picture" src={'https://prolibraapi.loca.lt' + gambar}/>
+              <Card.Img className="book-picture" src={'https://prolibra-api.loca.lt' + gambar}/>
             </div>
             <Card.Body className="book-detail">
               <Card.Title>

@@ -11,7 +11,7 @@ function BorrowerList(){
 
 	useEffect(() => {
 
-		fetch('https://prolibraapi.loca.lt/api/borrow-info/', {
+		fetch('https://prolibra-api.loca.lt/api/borrow-info/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
