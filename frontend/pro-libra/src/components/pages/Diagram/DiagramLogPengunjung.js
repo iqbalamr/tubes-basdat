@@ -9,7 +9,7 @@ function DiagramLogPengunjung() {
 
   useEffect(() => {
 
-		fetch('https://prolibra-api.loca.lt/api/services/', {
+		fetch('http://127.0.0.1:8000/api/services/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

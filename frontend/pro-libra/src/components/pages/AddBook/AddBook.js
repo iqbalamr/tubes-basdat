@@ -43,7 +43,7 @@ function AddBook(){
 
   function insertBook(){
 
-      return fetch (`https://prolibra-api.loca.lt/api/input-books/`, {
+      return fetch (`http://127.0.0.1:8000/api/input-books/`, {
         'method': 'POST',
         headers: {
           'Authorization': `Token ${token}`

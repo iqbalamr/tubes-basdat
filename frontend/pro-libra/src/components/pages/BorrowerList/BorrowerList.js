@@ -11,7 +11,7 @@ function BorrowerList(){
 
 	useEffect(() => {
 
-		fetch('https://prolibra-api.loca.lt/api/borrow-info/', {
+		fetch('http://127.0.0.1:8000/api/borrow-info/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

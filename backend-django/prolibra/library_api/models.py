@@ -15,7 +15,7 @@ class Lokasi(models.Model):
     nama_seksi = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.no_lokasi
+        return self.no
 
 
 class Buku(models.Model):

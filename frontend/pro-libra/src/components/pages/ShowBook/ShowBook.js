@@ -15,7 +15,7 @@ function ShowBook(){
 	
 	useEffect(() => {
 
-		fetch('https://prolibra-api.loca.lt/api/books', {
+		fetch('http://127.0.0.1:8000/api/books', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function ShowBook(){
 			{data.map((book) => {
 				return (
 					<BoookCard 
-					pictures= {'https://prolibra-api.loca.lt' + book.gambar}
+					pictures= {'http://127.0.0.1:8000' + book.gambar}
 					title= {book.judul_buku}
 					isbn= {book.isbn}
 					writer= {book.penulis}
@@ -87,7 +87,7 @@ function ShowBook(){
 				return (
 
 					<BoookCard 
-						pictures= {'https://prolibra-api.loca.lt' + book.gambar}
+						pictures= {'http://127.0.0.1:8000' + book.gambar}
 						title= {book.judul_buku}
 						isbn= {book.isbn}
 						writer= {book.penulis}

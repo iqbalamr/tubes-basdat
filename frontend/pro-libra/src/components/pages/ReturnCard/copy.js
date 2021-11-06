@@ -21,7 +21,7 @@ function ReturnForm(){
   var tanggal_pengembalian = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
 
 	function coba(){
-		fetch(`https://prolibra-api.loca.lt/api/return/${id_peminjam}-${isbn}/`, {
+		fetch(`http://127.0.0.1:8000/api/return/${id_peminjam}-${isbn}/`, {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',

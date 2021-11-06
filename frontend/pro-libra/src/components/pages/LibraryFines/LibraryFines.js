@@ -11,7 +11,7 @@ function LibraryFines(){
 
 	useEffect(() => {
 
-		fetch('https://prolibra-api.loca.lt/api/fines-list/', {
+		fetch('http://127.0.0.1:8000/api/fines-list/', {
 			'method': 'GET',
 			headers: {
 				'Content-Type': 'application/json',
