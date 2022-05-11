@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from rest_framework.authtoken.views import obtain_auth_token
+import debug_toolbar
+from django.conf import settings
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('library_api.urls')),
+    path('auth/', obtain_auth_token),
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
 
 from django.conf import settings

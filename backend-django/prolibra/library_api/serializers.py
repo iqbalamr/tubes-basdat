@@ -1,46 +1,103 @@
 from rest_framework import serializers
-from .models import Buku, Lokasi
+from .models import (
+    Buku,
+    Lokasi,
+    Peminjam,
+    Meminjam,
+    Denda,
+    Pendataan,
+    Mengurusi
+)
+from django.contrib.auth.models import User
 
-class LokasiSerializer(serializers.Serializer):
-    no_lokasi = serializers.CharField(max_length=8)
-    nama_seksi = serializers.CharField(max_length=20)
 
-    def create(self, validated_data):
-        return Lokasi.objects.create(validated_data)
+class CurrentUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'id')
 
-    def update(self, instance, validated_data):
-        instance.no_lokasi = validated_data.get('no_lokasi', instance.no_lokasi)
-        instance.nama_seksi = validated_data.get('nama_seksi', instance.nama_seksi)
+
+class LokasiSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lokasi
-        fields = ['no_lokasi','nama_seksi']
+        fields = ('no_lokasi','nama_seksi')
 
-class BukuSerializer(serializers.Serializer):
-    isbn = serializers.CharField(max_length=13)
-    judul_buku = serializers.CharField(max_length=100)
-    penulis = serializers.CharField(max_length=100)
-    penerbit = serializers.CharField(max_length=100)
-    jumlah_buku = serializers.IntegerField()
-    kategori = serializers.CharField(max_length=10)
-    no_lokasi = LokasiSerializer(many=False, read_only=True)
-    sinopsis = serializers.CharField(max_length=1000)
-    gambar = serializers.ImageField(max_length=None, use_url=True)
 
-    def create(self, validated_data):
-        return Buku.objects.create(**validated_data)
-
-    def update(self, instance, validated_data):
-        instance.isbn = validated_data.get('isbn', instance.isbn)
-        instance.judul_buku = validated_data.get('isbn', instance.judul_buku)
-        instance.penulis = validated_data.get('isbn', instance.penulis)
-        instance.penerbit = validated_data.get('isbn', instance.penerbit)
-        instance.jumlah_buku = validated_data.get('isbn', instance.jumlah_buku)
-        instance.kategori = validated_data.get('isbn', instance.kategori)
-        instance.no_lokasi = validated_data.get('isbn', instance.no_lokasi)
-        instance.sinopsis = validated_data.get('isbn', instance.sinopsis)
-        instance.gambar = validated_data.get('isbn', instance.gambar)
+class BukuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Buku
-        fields = ['isbn','judul_buku', 'penulis', 'penerbit', 'jumlah_buku','kategori', 'sinopsis', 'gambar','no_lokasi']
+        fields = '__all__'
+        lookup_field= 'judul_buku'
+
+
+class PeminjamSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Peminjam
+        fields = '__all__'
+    
+
+
+class MeminjamSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Meminjam
+        fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
+
+
+class InfoMeminjamSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Meminjam
+        fields = ('id_peminjam', 'isbn', 'tanggal_peminjaman', 'tanggal_pengembalian', 'status_peminjaman' )
+    id_peminjam = PeminjamSerializer(many=False)
+    # isbn = BukuSerializer(many=False)
+
+
+class InfoDendaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Denda
+        fields = ('id_peminjam', 'jumlah_denda', 'jumlah_hari_telat', 'status')
+    id_peminjam = PeminjamSerializer(many=False)
+
+
+class DendaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Denda
+        fields = ('id_peminjam', 'jumlah_denda', 'jumlah_hari_telat', 'status')
+
+
+class PendataanSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Pendataan
+        fields = '__all__'
+
+
+class InfoMengurusiSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Mengurusi
+        fields = '__all__'
+        
+    id_peminjam = PeminjamSerializer(many=False)
+    id_petugas = CurrentUserSerializer(many=False)
+
+
+class MengurusiSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Mengurusi
+        fields = '__all__'
+
+
+class PendataanSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Pendataan
+        fields = '__all__'
+

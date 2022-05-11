@@ -1,28 +1,27 @@
-.container {
+.container-manage-book {
   max-width: 100%;
-  padding: 0px !important;
+  padding: 60px !important;
   align-items: center !important;
   background-color: #0E0D27;
-  min-height: 1920px;
+  height: 100%;
 }
-.container .leftbar-add-column {
+.container-manage-book .leftbar-add-column {
   padding-left: 0 !important;
   padding-right: 0 !important;
   padding-top: 10px;
-  height: 100%;
 }
-.container .leftbar-add-column .leftbar-add-menus {
+.container-manage-book .leftbar-add-column .leftbar-add-menus {
   background-color: #0E0D27;
   height: 100% !important;
-  padding: 15px 0px 0px 0px !important;
+  padding: 5px 0px 0px 0px !important;
   border-right: 5px solid #613EB0;
 }
-.container .leftbar-add-column .leftbar-add-menus ul {
+.container-manage-book .leftbar-add-column .leftbar-add-menus ul {
   padding: 0;
   margin: 0;
 }
-.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu {
-  height: 80px;
+.container-manage-book .leftbar-add-column .leftbar-add-menus .leftbar-add-menu {
+  height: 80px !important;
   width: 100%;
   align-items: center;
   margin: 0 auto;
@@ -30,88 +29,63 @@
   text-align: center;
   border-bottom: 5px solid #613EB0;
 }
-.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu {
+.container-manage-book .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu {
   text-decoration: none !important;
 }
-.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu h2 {
+.container-manage-book .leftbar-add-column .leftbar-add-menus .leftbar-add-menu .link-menu h2 {
   color: #FFFFFF;
   font-weight: 700;
   padding-left: 40px;
 }
-.container .leftbar-add-column .leftbar-add-menus .leftbar-add-menu:hover {
+.container-manage-book .leftbar-add-column .leftbar-add-menus .leftbar-add-menu:hover {
+  height: 80px !important;
   background-color: #613EB0;
   text-decoration: none !important;
 }
-.container .temporary-display {
+.container-manage-book .temporary-display {
   display: block !important;
   margin: 0  auto !important;
   align-items: center !important;
+  padding: 60px;
+  height: 100%;
+  min-height: 1920px;
 }
-.container .main-body {
+.container-manage-book .temporary-display .hello-admin-pic {
+  padding: 30px;
+  display: flex;
+  margin: 0 auto !important;
+  width: 50%;
+  height: 50%;
+}
+.container-manage-book .main-body {
   width: 100%;
   height: 100%;
 }
-.container .right-column {
+.container-manage-book .right-column {
   padding: 0px;
 }
-.container h1 {
+.container-manage-book h1 {
   font-size: 3rem;
   color: #FFFFFF;
   font-weight: 800 ;
   text-align: center !important;
 }
-.container .login-col {
-  padding: 60px;
-  align-items: center !important;
-}
-.container .login-col .login-card {
-  display: flex;
-  margin: 0 auto !important;
-  padding-top: 60px;
-}
-.container .login-col h2 {
-  text-align: center !important;
-  font-size: 2rem;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-.container .login-col .login-page {
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin-top: 60px;
-}
-.container .login-col .form-login-card {
-  width: 100% ;
-}
-.container .login-col .form-login-card .login-label {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.container .login-col .form-login-card .input-field {
-  height: 50px;
-  background-color: #c4c4c46e;
-  float: right;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  padding-left: 30px;
-}
-.container .login-col .form-login-card .login-button {
-  margin-top: 20px;
-  width: 100px;
-  height: 50px !important;
-  float: right;
-  border-radius: 50px;
-  outline: none;
-  font-weight: 700;
-  font-size: 1.5rem;
-  background-color: #613EB0;
-  border: none;
-}
-.container .login-col .form-login-card .login-button .login-link {
-  text-decoration: none !important;
-  color: #FFFFFF !important;
+@media (max-width: 760px) {
+  .container-manage-book {
+    padding: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .container-manage-book .leftbar-add-column {
+    height: 100% !important;
+    padding: 0px 0px 0px 0px !important;
+    border: none !important;
+  }
+  .temporary-display {
+    height: 100% !important;
+  }
+  .temporary-display .hello-admin-pic {
+    width: 100% !important;
+    height: 100% !important;
+  }
 }

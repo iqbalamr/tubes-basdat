@@ -1,18 +1,19 @@
 
-.container{
+.container-borrow{
   max-width:100%;
   margin-right:10px;
   margin-left: auto;
   background-color:#0E0D27 !important;
-  height: 1920px;
-  padding: 60px 0px 0px 60px ;
+  min-height: 1920px !important;
+  height: 100% !important;
+  padding: 0px !important;
   .leftbar-column{
     padding-left: 0 !important;
     padding-right: 0 !important;
     .left-bar-menus{
       background-color:#0E0D27;
       height: 100% !important;
-      padding: 25px 0px 0px 0px !important;
+      padding: 10px 0px 0px 0px !important;
       border-right: 5px solid #613EB0;
       ul{
         padding: 0;
@@ -43,7 +44,8 @@
   }
 }
 .borrow-form-column{
-  padding-top: 60px;
+  display: flex !important;
+  align-items: center;
   h1{
     text-align: left !important;
     padding: 0px 0px 0px 60px !important;
@@ -54,20 +56,23 @@
   display: block !important;
   margin: 0  auto !important;
   align-items: center !important;
+  min-height: 1920px;
+  height: 100%;
+  padding-top: 60px;
   .borrow-img{
     display: flex !important;
     align-items: center !important;
     width:50% !important;
     height:50% !important;
     margin: 0 auto !important;
-    padding-top: 30px;
+    padding-top: 30px ;
   }
 }
 @media (max-width: 760px) {
   .container{
     padding: 0;
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
       .leftbar-menu{
         height: 100% !important;
         padding: 0px 0px 0px 0px !important;
